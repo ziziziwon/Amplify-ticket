@@ -20,13 +20,14 @@ interface SeatMapSeat {
 }
 
 export default function SeatPopupApp() {
-  // URL 파라미터에서 정보 가져오기
+  // URL 파라미터에서 정보 가져오기 (showid와 showId 모두 지원)
   const getUrlParam = (name: string) => {
     const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(name);
+    // 카멜케이스와 소문자 모두 확인
+    return urlParams.get(name) || urlParams.get(name.toLowerCase());
   };
 
-  const showId = getUrlParam("showId");
+  const showId = getUrlParam("showId") || getUrlParam("showid");
   const date = getUrlParam("date");
   const time = getUrlParam("time");
 

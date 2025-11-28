@@ -21,7 +21,11 @@ export default function SocialButtons({ mode = "login", onSuccess }: SocialButto
   const handleGoogleLogin = async () => {
     try {
       setLoading(true);
+      console.log("🔵 Google 로그인 버튼 클릭");
+      
       await signInWithGoogle();
+      
+      console.log("✅ Google 로그인 완료, 리다이렉트 중...");
       
       if (onSuccess) {
         onSuccess();
@@ -29,7 +33,14 @@ export default function SocialButtons({ mode = "login", onSuccess }: SocialButto
         navigate("/");
       }
     } catch (error: any) {
-      alert(error.message || "Google 로그인에 실패했습니다.");
+      console.error("❌ Google 로그인 실패:", error);
+      const errorMessage = error.message || "Google 로그인에 실패했습니다.";
+      alert(errorMessage);
+      
+      // 개발 환경에서 상세 에러 정보 표시
+      if (process.env.NODE_ENV === 'development') {
+        console.error("상세 에러 정보:", error);
+      }
     } finally {
       setLoading(false);
     }

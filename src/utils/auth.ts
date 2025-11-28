@@ -152,7 +152,22 @@ export const signInWithEmail = async (
 export const signInWithGoogle = async (): Promise<User> => {
   try {
     const provider = new GoogleAuthProvider();
+    
+    // 추가 OAuth 스코프 설정 (필요시)
+    provider.addScope('profile');
+    provider.addScope('email');
+    
+    // 사용자 선택 화면 표시 (이미 로그인한 경우에도)
+    provider.setCustomParameters({
+      prompt: 'select_account'
+    });
+    
+    console.log("🔵 Google 로그인 시작...");
+    console.log("현재 도메인:", window.location.origin);
+    
     const result = await signInWithPopup(auth, provider);
+    
+    console.log("✅ Google 로그인 성공:", result.user.uid);
     
     // Firestore에 사용자 정보 확인 및 생성
     const userRef = doc(db, "users", result.user.uid);
@@ -160,6 +175,7 @@ export const signInWithGoogle = async (): Promise<User> => {
     
     if (!userSnap.exists()) {
       // 처음 로그인하는 경우 사용자 데이터 생성
+      console.log("📝 새 사용자 데이터 생성 중...");
       await setDoc(userRef, {
         email: result.user.email,
         nickname: result.user.displayName || "사용자",
@@ -170,16 +186,30 @@ export const signInWithGoogle = async (): Promise<User> => {
         createdAt: serverTimestamp(),
         updatedAt: serverTimestamp(),
       });
+      console.log("✅ 사용자 데이터 생성 완료");
+    } else {
+      console.log("✅ 기존 사용자 로그인");
     }
     
     return result.user;
   } catch (error: any) {
-    console.error("Google login error:", error);
+    console.error("❌ Google 로그인 에러:", error);
+    console.error("에러 코드:", error.code);
+    console.error("에러 메시지:", error.message);
     
+    // 자세한 에러 처리
     if (error.code === "auth/popup-closed-by-user") {
       throw new Error("로그인이 취소되었습니다.");
+    } else if (error.code === "auth/popup-blocked") {
+      throw new Error("팝업이 차단되었습니다. 브라우저 설정에서 팝업을 허용해주세요.");
+    } else if (error.code === "auth/unauthorized-domain") {
+      throw new Error("인증되지 않은 도메인입니다. Firebase Console에서 승인된 도메인을 확인해주세요.");
+    } else if (error.code === "auth/operation-not-allowed") {
+      throw new Error("Google 로그인이 활성화되지 않았습니다. Firebase Console에서 확인해주세요.");
+    } else if (error.code === "auth/network-request-failed") {
+      throw new Error("네트워크 오류가 발생했습니다. 인터넷 연결을 확인해주세요.");
     } else {
-      throw new Error("Google 로그인 중 오류가 발생했습니다.");
+      throw new Error(`Google 로그인 중 오류가 발생했습니다: ${error.message || error.code || "알 수 없는 오류"}`);
     }
   }
 };

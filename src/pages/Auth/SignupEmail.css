@@ -160,15 +160,20 @@
   font-family: "SUIT, LINE Seed KR, Pretendard, sans-serif";
 }
 
-.signup-email-link a {
+.signup-email-link-button {
   color: #4C4F7A;
   font-weight: 600;
   text-decoration: underline;
   cursor: pointer;
   transition: color 0.2s;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
 }
 
-.signup-email-link a:hover {
+.signup-email-link-button:hover {
   color: #7062A6;
 }
 

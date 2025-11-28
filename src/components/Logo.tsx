@@ -15,7 +15,10 @@ interface LogoProps {
  */
 export default function Logo({ variant = "solid", height = 28 }: LogoProps) {
   const navigate = useNavigate();
-  const logoSrc = variant === "gradient" ? "/logo-gradient.svg" : "/logo.svg";
+  const publicUrl = process.env.PUBLIC_URL || "";
+  const logoSrc = variant === "gradient" 
+    ? `${publicUrl}/logo-gradient.svg` 
+    : `${publicUrl}/logo.svg`;
 
   return (
     <div

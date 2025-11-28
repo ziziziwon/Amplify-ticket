@@ -43,7 +43,6 @@ import AdminEvents from "./pages/Admin/AdminEvents";
 import AdminEventDetail from "./pages/Admin/AdminEventDetail";
 import AdminUsers from "./pages/Admin/AdminUsers";
 import AdminTickets from "./pages/Admin/AdminTickets";
-import AdminShows from "./pages/Admin/AdminShows";
 import AdminNotices from "./pages/Admin/AdminNotices";
 import AdminInquiries from "./pages/Admin/AdminInquiries";
 import AdminEventsManagement from "./pages/Admin/AdminEventsManagement";
@@ -262,11 +261,6 @@ function AppContent() {
             <AdminTickets />
           </AdminRoute>
         } />
-        <Route path="/admin/shows" element={
-          <AdminRoute>
-            <AdminShows />
-          </AdminRoute>
-        } />
         <Route path="/admin/notices" element={
           <AdminRoute>
             <AdminNotices />
@@ -299,7 +293,7 @@ function AppContent() {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/amplify">
       <AppContent />
     </BrowserRouter>
   );

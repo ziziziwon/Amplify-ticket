@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import IconifyIcon from "../../components/Icon/IconifyIcon";
 import MainLayout from "../../components/Layout/MainLayout";
 import { useTicketStore } from "../../stores/useTicketStore";
@@ -203,6 +204,7 @@ const faqData = [
 ];
 
 export default function Support() {
+  const navigate = useNavigate();
   const { user } = useTicketStore();
   const [activeTab, setActiveTab] = useState(0);
   const [guideSubTab, setGuideSubTab] = useState(0);
@@ -705,7 +707,7 @@ export default function Support() {
                 onClick={() => {
                   if (!user) {
                     alert("로그인이 필요합니다.");
-                    window.location.href = "/login";
+                    navigate("/login");
                   } else {
                     setOpenInquiryDialog(true);
                   }

@@ -280,8 +280,11 @@ export default function ShowDetail() {
     } else {
       setCurrentShow(show.showId, date);
       // 팝업창 열기 (React Router 경로 사용)
+      // 카페24 서버 호환성을 위해 절대 경로 사용
+      const publicUrl = process.env.PUBLIC_URL || "";
+      const popupUrl = `${window.location.origin}${publicUrl}/seat-popup?showId=${showId}&date=${date}&time=${time}`;
       window.open(
-        `/seat-popup?showId=${showId}&date=${date}&time=${time}`,
+        popupUrl,
         "seatPopup",
         "width=1200,height=900,scrollbars=yes,resizable=yes"
       );

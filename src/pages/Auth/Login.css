@@ -153,15 +153,20 @@
   font-family: "SUIT, LINE Seed KR, Pretendard, sans-serif";
 }
 
-.login-signup-link a {
+.login-signup-link-button {
   color: #4C4F7A;
   font-weight: 600;
   text-decoration: underline;
   cursor: pointer;
   transition: color 0.2s;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
 }
 
-.login-signup-link a:hover {
+.login-signup-link-button:hover {
   color: #7062A6;
 }
 

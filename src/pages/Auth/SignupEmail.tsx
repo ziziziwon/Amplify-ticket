@@ -93,9 +93,9 @@ export default function SignupEmail() {
         {/* 로그인 링크 */}
         <div className="signup-email-link">
           이미 계정이 있으신가요?{" "}
-          <a onClick={() => navigate("/login")}>
+          <button type="button" className="signup-email-link-button" onClick={() => navigate("/login")}>
             로그인
-          </a>
+          </button>
         </div>
       </div>
     </AuthLayout>

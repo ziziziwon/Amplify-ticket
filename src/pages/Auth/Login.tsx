@@ -125,9 +125,9 @@ export default function Login() {
         {/* 회원가입 링크 */}
         <div className="login-signup-link">
           아직 계정이 없으신가요?{" "}
-          <a onClick={() => navigate("/signup")}>
+          <button type="button" className="login-signup-link-button" onClick={() => navigate("/signup")}>
             회원가입
-          </a>
+          </button>
         </div>
       </form>
     </AuthLayout>

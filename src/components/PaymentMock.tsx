@@ -40,8 +40,11 @@ export default function PaymentMock({
     if (date) params.set("date", date);
     if (time) params.set("time", time);
 
+    // 카페24 서버 호환성을 위해 절대 경로 사용
+    const publicUrl = process.env.PUBLIC_URL || "";
+    const popupUrl = `${window.location.origin}${publicUrl}/payment-popup?${params.toString()}`;
     window.open(
-      `/payment-popup?${params.toString()}`,
+      popupUrl,
       "paymentPopup",
       "width=500,height=700,scrollbars=yes,resizable=yes"
     );

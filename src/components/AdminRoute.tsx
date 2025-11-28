@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate, Link } from "react-router-dom";
 import { useTicketStore } from "../stores/useTicketStore";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../firebase";
@@ -73,7 +73,7 @@ export default function AdminRoute({ children }: AdminRouteProps) {
       <div className="admin-route-denied">
         <h2 className="admin-route-denied-title">접근 권한이 없습니다</h2>
         <p className="admin-route-denied-text">관리자 전용 페이지입니다.</p>
-        <a href="/" className="admin-route-home-link">홈으로 이동</a>
+        <Link to="/" className="admin-route-home-link">홈으로 이동</Link>
       </div>
     );
   }

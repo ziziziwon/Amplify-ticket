@@ -1,0 +1,31 @@
+# Apache .htaccess for SPA routing
+# 카페24 서버용 설정 - 모든 경로를 index.html로 리다이렉트 (React Router 지원)
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /amplify/
+  
+  # 정적 파일들은 그대로 서빙 (이미지, CSS, JS 등)
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+  
+  # seat-popup 경로를 index.html로 리다이렉트 (쿼리 스트링 유지)
+  RewriteCond %{REQUEST_URI} ^/amplify/seat-popup
+  RewriteRule ^seat-popup.* index.html [L,QSA]
+  
+  # payment-popup 경로를 index.html로 리다이렉트 (쿼리 스트링 유지)
+  RewriteCond %{REQUEST_URI} ^/amplify/payment-popup
+  RewriteRule ^payment-popup.* index.html [L,QSA]
+  
+  # 나머지 모든 요청을 index.html로 리다이렉트
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . index.html [L]
+</IfModule>
+
+# MIME 타입 설정
+<IfModule mod_mime.c>
+  AddType application/javascript js
+  AddType text/css css
+</IfModule>

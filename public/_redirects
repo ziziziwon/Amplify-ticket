@@ -1,0 +1,7 @@
+# Netlify redirects (if using Netlify)
+/seat-popup    /index.html   200
+/payment-popup /index.html   200
+/*             /index.html   200
+
+
+

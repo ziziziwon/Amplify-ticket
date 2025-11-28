@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { getAuth, setPersistence, browserLocalPersistence, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
@@ -30,19 +30,6 @@ if (typeof window !== 'undefined') {
 export const auth = getAuth(app);
 export const db = getFirestore(app);
 export const storage = getStorage(app);
-
-// Auth 세션 지속성 설정 (localStorage에 저장하여 새로고침해도 유지)
-setPersistence(auth, browserLocalPersistence).catch((error) => {
-  console.error("Auth persistence 설정 실패:", error);
-});
-
-// Google Auth Provider
-export const googleProvider = new GoogleAuthProvider();
-
-// Google 로그인 함수
-export const googleLogin = async () => {
-  return await signInWithPopup(auth, googleProvider);
-};
 
 export default app;
 
