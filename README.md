@@ -402,13 +402,6 @@ npm run build
 
 프로젝트 관련 문의: [GitHub Issues](https://github.com/ziziziwon/Amplify-ticket/issues)
 
-## 🙏 감사의 말
-
-- React 커뮤니티
-- Firebase 팀
-- Material-UI 팀
-- 모든 오픈소스 기여자들
-
 ---
 
 Made with ❤️ for K-Culture fans worldwide
