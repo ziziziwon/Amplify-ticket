@@ -1,0 +1,28 @@
+.logo-container {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.logo-container:hover {
+  opacity: 0.85;
+  transform: scale(1.02);
+}
+
+.logo-container::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+}
+
+.logo-container:hover::before {
+  opacity: 1;
+}
+
+

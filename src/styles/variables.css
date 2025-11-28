@@ -1,0 +1,191 @@
+:root {
+  /* ============================================
+     Color System - Brand Colors
+     ============================================ */
+  
+  /* Primary - Mist Indigo */
+  --primary-main: #4C4F7A;
+  --primary-light: #7062A6;
+  --primary-dark: #3A3D5C;
+  --primary-contrast: #ffffff;
+  --primary-hover: rgba(76, 79, 122, 0.08);
+  --primary-active: rgba(76, 79, 122, 0.12);
+
+  /* Secondary - Neon Peach */
+  --secondary-main: #FF8C55;
+  --secondary-light: #FFB088;
+  --secondary-dark: #E6733D;
+  --secondary-contrast: #ffffff;
+  --secondary-hover: rgba(255, 140, 85, 0.1);
+
+  /* Background */
+  --background-default: #FFFFFF;
+  --background-paper: #F5F5F5;
+  --background-hover: #FAFAFA;
+  --background-active: #F0F0F0;
+
+  /* Text */
+  --text-primary: #232323;
+  --text-secondary: #707070;
+  --text-tertiary: #999999;
+  --text-disabled: #CCCCCC;
+  --text-inverse: #FFFFFF;
+
+  /* Divider & Border */
+  --divider: #D7D7D7;
+  --border-light: #E0E0E0;
+  --border-default: #D7D7D7;
+  --border-dark: #CCCCCC;
+
+  /* Status Colors */
+  --success: #10B981;
+  --error: #EF4444;
+  --warning: #F59E0B;
+  --info: #3B82F6;
+
+  /* ============================================
+     Spacing System (8px base)
+     ============================================ */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+  --spacing-3xl: 64px;
+
+  /* ============================================
+     Shape & Border Radius
+     ============================================ */
+  --border-radius-xs: 4px;
+  --border-radius-sm: 6px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-xl: 16px;
+  --border-radius-full: 9999px;
+
+  /* ============================================
+     Shadows - Modern Elevation System
+     ============================================ */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.12);
+  --shadow-2xl: 0 16px 32px rgba(0, 0, 0, 0.15);
+  
+  /* Colored Shadows */
+  --shadow-primary: 0 4px 12px rgba(76, 79, 122, 0.15);
+  --shadow-primary-lg: 0 8px 24px rgba(76, 79, 122, 0.2);
+  --shadow-secondary: 0 4px 12px rgba(255, 140, 85, 0.2);
+
+  /* ============================================
+     Typography
+     ============================================ */
+  --font-family-base: 'SUIT', 'LINE Seed KR', 'Pretendard', system-ui, -apple-system, Arial, sans-serif;
+  --font-family-display: 'Neue Haas Grotesk Display', 'General Sans', 'Pretendard', sans-serif;
+  --font-family-heading: 'General Sans', 'SUIT', 'Pretendard', sans-serif;
+
+  /* Font Sizes */
+  --font-size-xs: 12px;
+  --font-size-sm: 13px;
+  --font-size-base: 14px;
+  --font-size-md: 15px;
+  --font-size-lg: 16px;
+  --font-size-xl: 18px;
+  --font-size-2xl: 20px;
+  --font-size-3xl: 24px;
+  --font-size-4xl: 32px;
+  --font-size-5xl: 42px;
+
+  /* Font Weights */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  /* Line Heights */
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  /* Letter Spacing */
+  --letter-spacing-tight: -0.5px;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.5px;
+  --letter-spacing-wider: 1px;
+
+  /* ============================================
+     Transitions & Animations
+     ============================================ */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.2s ease;
+  --transition-slow: 0.3s ease;
+  --transition-slower: 0.4s ease;
+
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+
+  /* ============================================
+     Z-Index Scale
+     ============================================ */
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-fixed: 300;
+  --z-modal-backdrop: 1000;
+  --z-modal: 1100;
+  --z-popover: 1200;
+  --z-tooltip: 1300;
+
+  /* ============================================
+     Layout
+     ============================================ */
+  --container-max-width: 1280px;
+  --header-height: 73px;
+  --banner-height: 32px;
+  --header-total-height: 105px;
+}
+
+[data-theme='dark'] {
+  /* Primary */
+  --primary-main: #7062A6;
+  --primary-light: #9488C7;
+  --primary-dark: #4C4F7A;
+
+  /* Background */
+  --background-default: #1E2433;
+  --background-paper: #2A3144;
+
+  /* Text */
+  --text-primary: #F5F5F5;
+  --text-secondary: #D7D7D7;
+
+  /* Divider */
+  --divider: #4C4F7A;
+}
+
+body {
+  background-color: var(--background-default);
+  color: var(--text-primary);
+  font-family: var(--font-family-base);
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2 {
+  font-family: var(--font-family-display);
+  font-weight: 700;
+}
+
+h3, h4, h5, h6 {
+  font-family: var(--font-family-heading);
+  font-weight: 600;
+}
+
+button {
+  font-family: var(--font-family-base);
+}

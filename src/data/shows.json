@@ -1,0 +1,116 @@
+[
+  {
+    "showId": "taylor-swift-2025",
+    "artist": "Taylor Swift",
+    "tourName": "The Eras Tour",
+    "venueId": "gocheok",
+    "city": "Seoul",
+    "dates": ["2025-12-06T19:00:00", "2025-12-07T19:00:00"],
+    "posterUrl": "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=800",
+    "priceTable": {
+      "VIP": 280000,
+      "R": 240000,
+      "S": 180000,
+      "A": 120000
+    },
+    "description": "테일러 스위프트의 'The Eras Tour' 서울 공연",
+    "genre": "Pop",
+    "ticketStatus": "onsale",
+    "seatGrades": ["VIP", "R", "S", "A"]
+  },
+  {
+    "showId": "coldplay-2025",
+    "artist": "Coldplay",
+    "tourName": "Music Of The Spheres World Tour",
+    "venueId": "kspodome",
+    "city": "Seoul",
+    "dates": ["2025-11-25T19:00:00", "2025-11-26T19:00:00"],
+    "posterUrl": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800",
+    "priceTable": {
+      "VIP": 250000,
+      "R": 200000,
+      "S": 150000,
+      "Standing": 130000
+    },
+    "description": "콜드플레이의 'Music Of The Spheres' 월드 투어 서울 공연",
+    "genre": "Rock",
+    "ticketStatus": "presale",
+    "seatGrades": ["VIP", "R", "S", "Standing"]
+  },
+  {
+    "showId": "billie-eilish-2025",
+    "artist": "Billie Eilish",
+    "tourName": "Happier Than Ever Tour",
+    "venueId": "jamsil_arena",
+    "city": "Seoul",
+    "dates": ["2025-10-15T19:00:00"],
+    "posterUrl": "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=800",
+    "priceTable": {
+      "VIP": 220000,
+      "R": 170000,
+      "S": 130000,
+      "A": 90000
+    },
+    "description": "빌리 아일리시 서울 단독 공연",
+    "genre": "Pop",
+    "ticketStatus": "upcoming",
+    "seatGrades": ["VIP", "R", "S", "A"]
+  },
+  {
+    "showId": "ed-sheeran-2025",
+    "artist": "Ed Sheeran",
+    "tourName": "Mathematics Tour",
+    "venueId": "kspodome",
+    "city": "Seoul",
+    "dates": ["2025-09-20T19:00:00", "2025-09-21T19:00:00"],
+    "posterUrl": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800",
+    "priceTable": {
+      "VIP": 260000,
+      "R": 210000,
+      "S": 160000,
+      "A": 110000
+    },
+    "description": "에드 시런 'Mathematics Tour' 서울 공연",
+    "genre": "Pop",
+    "ticketStatus": "onsale",
+    "seatGrades": ["VIP", "R", "S", "A"]
+  },
+  {
+    "showId": "imagine-dragons-2025",
+    "artist": "Imagine Dragons",
+    "tourName": "Mercury World Tour",
+    "venueId": "olympic_hall",
+    "city": "Seoul",
+    "dates": ["2025-11-10T19:00:00"],
+    "posterUrl": "https://images.unsplash.com/photo-1506157786151-b8491531f063?w=800",
+    "priceTable": {
+      "VIP": 200000,
+      "R": 150000,
+      "S": 100000
+    },
+    "description": "이매진 드래곤스 서울 공연",
+    "genre": "Rock",
+    "ticketStatus": "onsale",
+    "seatGrades": ["VIP", "R", "S"]
+  },
+  {
+    "showId": "bruno-mars-2025",
+    "artist": "Bruno Mars",
+    "tourName": "Bruno Mars Live",
+    "venueId": "gocheok",
+    "city": "Seoul",
+    "dates": ["2026-01-15T19:00:00", "2026-01-16T19:00:00", "2026-01-17T19:00:00"],
+    "posterUrl": "https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?w=800",
+    "priceTable": {
+      "VIP": 300000,
+      "R": 250000,
+      "S": 200000,
+      "A": 150000
+    },
+    "description": "브루노 마스 서울 3일 연속 공연",
+    "genre": "Pop",
+    "ticketStatus": "soldout",
+    "seatGrades": ["VIP", "R", "S", "A"]
+  }
+]
+

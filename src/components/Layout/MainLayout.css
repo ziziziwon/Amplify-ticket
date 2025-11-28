@@ -1,0 +1,14 @@
+/* Main Layout */
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--background-hover);
+}
+
+.main-layout-main {
+  flex: 1;
+  padding-top: var(--header-total-height);
+}
+
+

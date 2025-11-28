@@ -1,0 +1,204 @@
+/* Section Header */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+  width: 100%;
+}
+
+
+.section-title {
+  font-weight: 800;
+  font-size: 28px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: "General Sans, SUIT, sans-serif";
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -20px;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 24px;
+  background: linear-gradient(180deg, #667eea, #764ba2);
+  border-radius: 2px;
+}
+
+.section-more {
+  color: #667eea;
+  font-weight: 600;
+  font-size: 15px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.section-more::after {
+  content: ">>";
+  margin-left: 4px;
+  transition: transform 0.2s;
+  display: inline-block;
+}
+
+.section-more:hover {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+  color: #764ba2;
+}
+
+.section-more:hover::after {
+  transform: translateX(4px);
+}
+
+/* Quick Access Buttons */
+.quick-access {
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.quick-access::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #e0e0e0 20%, #e0e0e0 80%, transparent);
+}
+
+.quick-access-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.quick-access-button {
+  height: 100px;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.quick-access-button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+  transition: transform 0.3s;
+  border-radius: 50%;
+}
+
+.quick-access-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  transition: border-color 0.3s;
+}
+
+.quick-access-button:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.quick-access-button:hover::after {
+  border-color: #667eea;
+}
+
+.quick-access-button:hover {
+  border-color: #667eea;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(102, 126, 234, 0.15);
+}
+
+.quick-access-icon {
+  font-size: 36px;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s;
+}
+
+.quick-access-button:hover .quick-access-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.quick-access-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #232323;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+  position: relative;
+  z-index: 1;
+}
+
+.quick-access-button:hover .quick-access-label {
+  color: #667eea;
+}
+
+/* Two Column Layout */
+.two-column-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.event-description {
+  padding: 16px;
+  text-align: center;
+  color: #6B7280;
+  margin-bottom: 16px;
+  font-size: 13px;
+  position: relative;
+}
+
+
+/* Responsive */
+@media (max-width: 960px) {
+  .quick-access-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .two-column-layout {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .quick-access-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+

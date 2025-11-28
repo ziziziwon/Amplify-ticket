@@ -1,0 +1,189 @@
+/* Admin Events */
+.admin-events-container {
+  background: #F5F5F5;
+  min-height: 100vh;
+  padding-top: 0;
+  padding-bottom: 32px;
+}
+
+.admin-events-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px;
+  margin-top: 24px;
+}
+
+.admin-events-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.admin-events-title {
+  font-weight: 800;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 4px;
+  font-size: 32px;
+  position: relative;
+}
+
+.admin-events-title::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 2px;
+}
+
+.admin-events-subtitle {
+  color: #999;
+  font-size: 14px;
+}
+
+.admin-events-button {
+  padding: 10px 24px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.admin-events-button:hover {
+  background: linear-gradient(135deg, #5568d3 0%, #65398b 100%);
+  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+  transform: translateY(-1px);
+}
+
+.admin-events-search-paper {
+  padding: 20px;
+  margin-bottom: 24px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.admin-events-loading {
+  display: flex;
+  justify-content: center;
+  padding: 64px 0;
+}
+
+.admin-events-table-paper {
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.admin-events-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-events-table-head {
+  background: #fafafa;
+}
+
+.admin-events-table-header-cell {
+  padding: 16px;
+  font-weight: 700;
+  color: #333;
+  text-align: left;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.admin-events-table-row {
+  border-bottom: 1px solid #e0e0e0;
+  transition: background 0.2s;
+}
+
+.admin-events-table-row:hover {
+  background: rgba(102, 126, 234, 0.03);
+}
+
+.admin-events-table-cell {
+  padding: 16px;
+  color: #666;
+}
+
+.admin-events-poster {
+  width: 50px;
+  height: 70px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+}
+
+.admin-events-artist {
+  font-weight: 600;
+  color: #232323;
+}
+
+.admin-events-empty {
+  text-align: center;
+  padding: 64px 32px;
+  color: #999;
+}
+
+.admin-events-menu-button {
+  background: none;
+  border: none;
+  color: #667eea;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.admin-events-menu-button:hover {
+  background: rgba(102, 126, 234, 0.1);
+}
+
+.admin-events-menu {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border: 1px solid #e0e0e0;
+  background: #fff;
+  padding: 8px 0;
+  margin-top: 8px;
+}
+
+.admin-events-menu-item {
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  color: #232323;
+}
+
+.admin-events-menu-item:hover {
+  background: rgba(102, 126, 234, 0.05);
+}
+
+.admin-events-menu-item-icon {
+  font-size: 18px;
+  color: #667eea;
+}
+
+

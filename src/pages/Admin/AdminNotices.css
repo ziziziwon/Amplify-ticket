@@ -1,0 +1,320 @@
+.admin-notices-page {
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+.admin-notices-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+.admin-notices-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.admin-notices-header-text {
+  flex: 1;
+}
+
+.admin-notices-title {
+  font-size: 32px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0 0 4px 0;
+  font-family: "General Sans, SUIT, sans-serif";
+}
+
+.admin-notices-subtitle {
+  font-size: 14px;
+  color: #999;
+  margin: 0;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.admin-notices-add-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.admin-notices-add-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+}
+
+.admin-notices-table-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+}
+
+.admin-notices-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-notices-table thead {
+  background: #fafafa;
+}
+
+.admin-notices-table th {
+  padding: 16px;
+  text-align: left;
+  font-weight: 700;
+  color: #232323;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+  font-size: 14px;
+}
+
+.admin-notices-th-action {
+  text-align: center;
+}
+
+.admin-notices-table-row {
+  border-bottom: 1px solid #e0e0e0;
+  transition: background-color 0.2s ease;
+}
+
+.admin-notices-table-row:hover {
+  background: #f5f5f5;
+}
+
+.admin-notices-table td {
+  padding: 16px;
+  font-size: 14px;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.admin-notices-td-action {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.admin-notices-important-chip {
+  display: inline-block;
+  padding: 4px 12px;
+  background: #ff8c55;
+  color: white;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.admin-notices-title-text {
+  font-weight: 600;
+  color: #232323;
+  margin: 0;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.admin-notices-date {
+  color: #707070;
+  margin: 0;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.admin-notices-action-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  color: #4c4f7a;
+  transition: all 0.2s ease;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-notices-action-button:hover {
+  background: rgba(76, 79, 122, 0.1);
+}
+
+.admin-notices-action-button-danger {
+  color: #707070;
+}
+
+.admin-notices-action-button-danger:hover {
+  color: #ff8c55;
+  background: rgba(255, 140, 85, 0.1);
+}
+
+.admin-notices-empty-cell {
+  padding: 64px 16px;
+  text-align: center;
+}
+
+.admin-notices-loading-text,
+.admin-notices-empty-text {
+  color: #707070;
+  margin: 0;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.admin-notices-dialog-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.admin-notices-dialog {
+  background: white;
+  border-radius: 12px;
+  min-width: 600px;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: auto;
+}
+
+.admin-notices-dialog-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+  padding: 24px 24px 0 24px;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.admin-notices-dialog-content {
+  padding: 24px;
+}
+
+.admin-notices-dialog-switch-wrapper {
+  margin-bottom: 24px;
+}
+
+.admin-notices-dialog-switch-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+  color: #232323;
+}
+
+.admin-notices-dialog-switch {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  appearance: none;
+  background: #ccc;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.admin-notices-dialog-switch:checked {
+  background: #4c4f7a;
+}
+
+.admin-notices-dialog-switch-slider {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+
+.admin-notices-dialog-switch:checked + .admin-notices-dialog-switch-slider {
+  transform: translateX(20px);
+}
+
+.admin-notices-dialog-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.admin-notices-dialog-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #232323;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.admin-notices-dialog-input,
+.admin-notices-dialog-textarea {
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+  resize: vertical;
+}
+
+.admin-notices-dialog-input:focus,
+.admin-notices-dialog-textarea:focus {
+  outline: none;
+  border-color: #4c4f7a;
+  border-width: 2px;
+}
+
+.admin-notices-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 0 24px 24px 24px;
+}
+
+.admin-notices-dialog-button {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.admin-notices-dialog-button-cancel {
+  background: transparent;
+  color: #707070;
+}
+
+.admin-notices-dialog-button-cancel:hover {
+  background: #f5f5f5;
+}
+
+.admin-notices-dialog-button-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.admin-notices-dialog-button-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+

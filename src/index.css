@@ -1,13 +1,172 @@
+@import "./styles/variables.css";
+/* AMPLIFY Brand Fonts */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+@import url('https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css');
+
+/* General Sans - for English UI (Premium alternative to system fonts) */
+/* Note: Add General Sans font files to public/fonts or use web font service */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'SUIT', 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #FFFFFF;
+  color: #232323;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* 모던 스크롤바 - Brand Gradient */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-paper);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--primary-main) 0%, var(--primary-light) 100%);
+  border-radius: 10px;
+  transition: var(--transition-base);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-main) 100%);
+}
+
+/* 링크 기본 스타일 */
+
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 버튼 기본 스타일 리셋 */
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* ⭐ Swiper 네비게이션 & 페이지네이션 스타일 */
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--primary-main) !important;
+  transition: var(--transition-base);
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: var(--primary-light) !important;
+  transform: scale(1.1);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 24px !important;
+  font-weight: var(--font-weight-bold);
+}
+
+.swiper-pagination-bullet {
+  background: var(--border-default) !important;
+  opacity: 1 !important;
+  width: 10px;
+  height: 10px;
+  transition: var(--transition-base);
+}
+
+.swiper-pagination-bullet-active {
+  background: linear-gradient(135deg, var(--primary-main) 0%, var(--primary-light) 100%) !important;
+  width: 28px;
+  border-radius: 5px;
+}
+
+.swiper-pagination-bullet:hover {
+  background: var(--text-tertiary) !important;
+  transform: scale(1.2);
+}
+
+/* ⭐ 그라디언트 텍스트 유틸리티 */
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary-main) 0%, var(--primary-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ⭐ 그라디언트 배경 유틸리티 */
+.gradient-bg {
+  background: linear-gradient(135deg, var(--primary-main) 0%, var(--primary-light) 100%);
+}
+
+/* ⭐ 모던 카드 스타일 */
+.modern-card {
+  background: var(--background-default);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-base);
+}
+
+.modern-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+/* ⭐ 모던 버튼 스타일 */
+.modern-button {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--border-radius-sm);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-base);
+  transition: var(--transition-base);
+  cursor: pointer;
+  border: none;
+  font-family: var(--font-family-base);
+}
+
+.modern-button-primary {
+  background: var(--primary-main);
+  color: var(--primary-contrast);
+  box-shadow: var(--shadow-sm);
+}
+
+.modern-button-primary:hover {
+  background: var(--primary-dark);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.modern-button-secondary {
+  background: transparent;
+  color: var(--primary-main);
+  border: 1px solid var(--border-default);
+}
+
+.modern-button-secondary:hover {
+  border-color: var(--primary-main);
+  background: var(--primary-hover);
 }

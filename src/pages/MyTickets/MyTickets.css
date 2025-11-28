@@ -1,0 +1,730 @@
+.mytickets-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+.mytickets-login-required {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.mytickets-login-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #232323;
+  margin: 0 0 16px 0;
+  font-family: "General Sans, SUIT, sans-serif";
+}
+
+.mytickets-login-text {
+  font-size: 16px;
+  color: #707070;
+  margin: 0 0 32px 0;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.mytickets-login-button {
+  padding: 12px 32px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.mytickets-login-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.mytickets-profile-card {
+  padding: 32px;
+  margin-bottom: 32px;
+  background: white;
+  border: 1px solid #d7d7d7;
+  border-radius: 8px;
+}
+
+.mytickets-profile-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.mytickets-profile-info {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.mytickets-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #f5f5f5;
+  border: 2px solid #d7d7d7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #707070;
+  flex-shrink: 0;
+}
+
+.mytickets-profile-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mytickets-profile-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.mytickets-profile-email {
+  font-size: 20px;
+  font-weight: 700;
+  color: #232323;
+  margin: 0;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.mytickets-provider-chip {
+  display: inline-block;
+  padding: 4px 8px;
+  background: #ff8c55;
+  color: white;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  height: 22px;
+  line-height: 14px;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.mytickets-profile-name {
+  font-size: 14px;
+  color: #707070;
+  margin: 0;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.mytickets-stats {
+  display: flex;
+  gap: 32px;
+}
+
+.mytickets-stat-item {
+  text-align: center;
+}
+
+.mytickets-stat-value {
+  font-size: 32px;
+  font-weight: 700;
+  color: #4c4f7a;
+  margin: 0 0 4px 0;
+  font-family: "General Sans, sans-serif";
+}
+
+.mytickets-stat-label {
+  font-size: 14px;
+  color: #707070;
+  margin: 0;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.mytickets-tabs-container {
+  border-bottom: 2px solid #f5f5f5;
+  margin-bottom: 32px;
+}
+
+.mytickets-tabs-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+}
+
+.mytickets-tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  font-size: 16px;
+  font-weight: 600;
+  color: #707070;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.mytickets-tab:hover {
+  color: #4c4f7a;
+}
+
+.mytickets-tab.active {
+  color: #4c4f7a;
+  border-bottom-color: #4c4f7a;
+}
+
+/* .mytickets-tab.active::after 제거 - 보라색 그라데이션 선 제거 */
+
+.mytickets-content {
+  width: 100%;
+}
+
+.mytickets-section {
+  margin-bottom: 32px;
+}
+
+.mytickets-section-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #232323;
+  margin: 0 0 24px 0;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.mytickets-empty-state {
+  padding: 64px 32px;
+  text-align: center;
+  background: #f5f5f5;
+  border-radius: 8px;
+}
+
+.mytickets-empty-text {
+  font-size: 16px;
+  color: #707070;
+  margin: 0 0 24px 0;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.mytickets-empty-button {
+  padding: 12px 32px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.mytickets-empty-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.mytickets-orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mytickets-order-card {
+  border: 1px solid #d7d7d7;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: white;
+}
+
+.mytickets-order-card:hover {
+  box-shadow: 0 4px 16px rgba(76, 79, 122, 0.15);
+  transform: translateY(-2px);
+}
+
+/* .mytickets-order-card::before 제거 - 보라색 그라데이션 선 제거 */
+
+.mytickets-order-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  padding: 24px;
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .mytickets-order-grid {
+    grid-template-columns: 120px 1fr 200px 100px 120px;
+  }
+}
+
+.mytickets-order-date {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mytickets-order-label {
+  font-size: 12px;
+  color: #707070;
+  display: block;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.mytickets-order-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: #232323;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.mytickets-order-show {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.mytickets-order-poster {
+  width: 80px;
+  height: 80px;
+  border-radius: 6px;
+  object-fit: cover;
+  border: 1px solid #d7d7d7;
+  flex-shrink: 0;
+}
+
+.mytickets-order-show-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mytickets-order-status-chip {
+  display: inline-block;
+  padding: 4px 8px;
+  background: #4c4f7a;
+  color: white;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  height: 20px;
+  line-height: 12px;
+  width: fit-content;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.mytickets-order-artist {
+  font-size: 16px;
+  font-weight: 700;
+  color: #232323;
+  margin: 0;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.mytickets-order-subtitle {
+  font-size: 14px;
+  color: #707070;
+  margin: 4px 0;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.mytickets-order-hall {
+  font-size: 13px;
+  color: #707070;
+  margin: 4px 0 0;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.mytickets-order-venue {
+  font-size: 13px;
+  color: #707070;
+  margin: 0;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.mytickets-order-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mytickets-order-detail-text {
+  font-size: 13px;
+  color: #232323;
+  margin: 0;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.mytickets-order-action {
+  text-align: center;
+}
+
+.mytickets-order-qr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-sm);
+  background: white;
+  border-radius: 8px;
+  border: 1px solid var(--border-light);
+}
+
+.mytickets-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xl);
+  gap: var(--spacing-md);
+}
+
+.mytickets-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--background-paper);
+  border-top: 4px solid var(--primary-main);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.mytickets-view-button {
+  padding: 8px 16px;
+  background: transparent;
+  border: 1px solid #4c4f7a;
+  color: #4c4f7a;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.mytickets-view-button:hover {
+  background: rgba(76, 79, 122, 0.05);
+  border-color: #4c4f7a;
+}
+
+.mytickets-view-button::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.mytickets-view-button:hover::before {
+  opacity: 1;
+}
+
+.mytickets-order-cancel-button {
+  padding: 8px 16px;
+  border: 1px solid #e74c3c;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+  background: #f5f5f5;
+  color: #e74c3c;
+}
+
+.mytickets-order-cancel-button:hover:not(:disabled) {
+  background: #e74c3c;
+  color: white;
+}
+
+.mytickets-order-cancel-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.mytickets-cancelled-badge {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+  background: #f5f5f5;
+  color: #e74c3c;
+  border: 1px solid #e74c3c;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* 취소 확인 모달 */
+.mytickets-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.mytickets-modal-content {
+  background: white;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mytickets-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.mytickets-modal-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #232323;
+  margin: 0;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.mytickets-modal-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  color: #707070;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.mytickets-modal-close:hover {
+  color: #232323;
+}
+
+.mytickets-modal-body {
+  padding: 20px 24px;
+}
+
+.mytickets-modal-warning {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding: 16px;
+  background: #fff3cd;
+  border-radius: 8px;
+  border: 1px solid #ffc107;
+}
+
+.mytickets-modal-warning svg {
+  color: #ff9800;
+  width: 40px;
+  height: 40px;
+}
+
+.mytickets-modal-warning-text {
+  font-size: 15px;
+  font-weight: 600;
+  color: #856404;
+  margin: 0;
+  text-align: center;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.mytickets-modal-ticket-info {
+  background: #f5f5f5;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.mytickets-modal-info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.mytickets-modal-info-row:last-child {
+  border-bottom: none;
+}
+
+.mytickets-modal-info-label {
+  font-size: 14px;
+  color: #707070;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.mytickets-modal-info-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: #232323;
+  text-align: right;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.mytickets-modal-price {
+  color: #e74c3c;
+  font-size: 16px;
+}
+
+.mytickets-modal-notice {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 16px;
+  border-left: 4px solid #ff9800;
+}
+
+.mytickets-modal-notice-text {
+  font-size: 13px;
+  color: #707070;
+  margin: 4px 0;
+  line-height: 1.6;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.mytickets-modal-footer {
+  display: flex;
+  gap: 12px;
+  padding: 20px 24px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.mytickets-modal-button {
+  flex: 1;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.mytickets-modal-button-cancel {
+  background: #f5f5f5;
+  color: #707070;
+}
+
+.mytickets-modal-button-cancel:hover {
+  background: #e0e0e0;
+}
+
+.mytickets-modal-button-confirm {
+  background: #e74c3c;
+  color: white;
+}
+
+.mytickets-modal-button-confirm:hover:not(:disabled) {
+  background: #c0392b;
+}
+
+.mytickets-modal-button-confirm:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.mytickets-modal-spinner-small {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@media (max-width: 768px) {
+  .mytickets-profile-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .mytickets-stats {
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .mytickets-order-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mytickets-order-date,
+  .mytickets-order-action {
+    text-align: left;
+  }
+
+  .mytickets-modal-content {
+    max-width: 95%;
+    width: 95%;
+    max-height: 90vh;
+  }
+
+  .mytickets-modal-header,
+  .mytickets-modal-body,
+  .mytickets-modal-footer {
+    padding: 16px;
+  }
+
+  .mytickets-modal-footer {
+    flex-direction: column;
+  }
+
+  .mytickets-modal-button {
+    width: 100%;
+  }
+}
+
+

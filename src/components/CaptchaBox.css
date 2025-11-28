@@ -1,0 +1,135 @@
+.captcha-box {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 40px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.captcha-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.captcha-header svg {
+  color: #667eea;
+  margin-bottom: 16px;
+}
+
+.captcha-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 8px 0;
+}
+
+.captcha-subtitle {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.captcha-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.captcha-image-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: #f9fafb;
+  border-radius: 12px;
+  border: 2px solid var(--border-light);
+}
+
+.captcha-canvas {
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.captcha-refresh {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s;
+}
+
+.captcha-refresh:hover {
+  background: var(--primary-main);
+  color: white;
+  transform: rotate(180deg);
+}
+
+.captcha-input-wrapper {
+  display: flex;
+  gap: 12px;
+}
+
+.captcha-input {
+  flex: 1;
+  padding: 14px 16px;
+  border: 2px solid var(--border-light);
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  transition: border-color 0.2s;
+}
+
+.captcha-input:focus {
+  outline: none;
+  border-color: var(--primary-main);
+}
+
+.captcha-verify-button {
+  padding: 14px 32px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.captcha-verify-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+/* 반응형 */
+@media (max-width: 640px) {
+  .captcha-box {
+    padding: 24px;
+  }
+
+  .captcha-title {
+    font-size: 20px;
+  }
+
+  .captcha-input-wrapper {
+    flex-direction: column;
+  }
+
+  .captcha-verify-button {
+    width: 100%;
+  }
+}

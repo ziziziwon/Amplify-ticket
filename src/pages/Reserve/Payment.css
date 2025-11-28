@@ -1,0 +1,348 @@
+.payment-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-lg);
+}
+
+.payment-loading,
+.payment-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: var(--spacing-md);
+}
+
+.payment-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--background-paper);
+  border-top: 4px solid var(--primary-main);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.payment-error h2 {
+  font-size: 24px;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.payment-error p {
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.payment-back-button {
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.payment-back-button:hover {
+  transform: translateY(-2px);
+}
+
+/* 헤더 */
+.payment-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+}
+
+.payment-back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.payment-back:hover {
+  background: var(--background-paper);
+  border-color: var(--primary-main);
+}
+
+.payment-title {
+  font-size: 28px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+}
+
+/* 콘텐츠 */
+.payment-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+}
+
+.payment-summary-card,
+.payment-form-card {
+  background: white;
+  border-radius: 12px;
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.payment-card-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 var(--spacing-lg) 0;
+}
+
+/* 공연 정보 */
+.payment-show-info {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.payment-show-image {
+  width: 120px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.payment-show-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.payment-show-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.payment-show-tour {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.payment-show-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: auto;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.payment-show-meta span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.payment-divider {
+  border: none;
+  border-top: 1px solid var(--border-light);
+  margin: var(--spacing-lg) 0;
+}
+
+/* 좌석 정보 */
+.payment-seats-section {
+  margin-bottom: var(--spacing-lg);
+}
+
+.payment-section-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 var(--spacing-md) 0;
+}
+
+.payment-seats-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.payment-seat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-sm);
+  background: var(--background-paper);
+  border-radius: 6px;
+}
+
+.payment-seat-info {
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.payment-seat-price {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* 가격 요약 */
+.payment-price-summary {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.payment-price-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.payment-price-row.payment-price-total {
+  border-top: 2px solid var(--border-light);
+  padding-top: var(--spacing-md);
+  margin-top: var(--spacing-sm);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* 폼 */
+.payment-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.payment-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.payment-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.payment-required {
+  color: var(--error-main);
+}
+
+.payment-input {
+  padding: 12px 16px;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.payment-input:focus {
+  outline: none;
+  border-color: var(--primary-main);
+}
+
+.payment-methods {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.payment-method-option {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: 12px;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.payment-method-option:hover {
+  background: var(--background-paper);
+  border-color: var(--primary-main);
+}
+
+.payment-method-option input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.payment-method-option input[type="radio"]:checked + span {
+  font-weight: 600;
+  color: var(--primary-main);
+}
+
+/* 결제 버튼 */
+.payment-submit-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  padding: 16px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin-top: var(--spacing-md);
+}
+
+.payment-submit-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3);
+}
+
+/* 반응형 */
+@media (max-width: 1024px) {
+  .payment-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .payment-container {
+    padding: var(--spacing-md);
+  }
+
+  .payment-title {
+    font-size: 24px;
+  }
+
+  .payment-show-info {
+    flex-direction: column;
+  }
+
+  .payment-show-image {
+    width: 100%;
+    height: 200px;
+  }
+}
+
+

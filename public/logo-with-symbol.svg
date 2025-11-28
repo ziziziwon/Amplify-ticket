@@ -1,0 +1,17 @@
+<svg width="200" height="40" viewBox="0 0 200 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 심볼 - 스테이지 라이트 △ -->
+  <g transform="translate(0, 8)">
+    <!-- 외부 삼각형 -->
+    <path d="M 12 24 L 2 24 L 7 14 Z" fill="#4C4F7A" opacity="0.3"/>
+    <!-- 내부 삼각형 (빛나는 효과) -->
+    <path d="M 10 24 L 4 24 L 7 17 Z" fill="#FF8C55"/>
+    <!-- 중앙 코어 -->
+    <path d="M 8.5 24 L 5.5 24 L 7 20 Z" fill="#FFFFFF" opacity="0.8"/>
+  </g>
+  
+  <!-- AMPLIFY 텍스트 -->
+  <text x="20" y="28" font-family="Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="6" fill="#4C4F7A">
+    AMPLIFY
+  </text>
+</svg>
+

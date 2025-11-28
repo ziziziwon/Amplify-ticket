@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="32" cy="32" r="32" fill="#4C4F7A"/>
+  
+  <!-- Letter A from AMPLIFY logo (simplified) -->
+  <g transform="translate(18, 18) scale(0.8)">
+    <path d="M9.79,0h6.82l9.79,23.76h-7.43l-1.51-4.12h-8.48l-1.53,4.12H0L9.79,0ZM11.32,13.59h3.8l-1.87-5.24h-.05l-1.87,5.24Z" fill="#FFFFFF"/>
+  </g>
+  
+  <!-- Accent glow -->
+  <circle cx="32" cy="32" r="28" fill="none" stroke="#FF8C55" stroke-width="0.5" opacity="0.3"/>
+</svg>
+

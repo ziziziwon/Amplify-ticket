@@ -1,0 +1,151 @@
+/* Icon Styles using SVG Mask */
+
+/* Base icon styles */
+.icon {
+    display: inline-block;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    background-color: currentColor;
+}
+
+/* Calendar Icon */
+.icon-calendar {
+    width: 14px;
+    height: 14px;
+    mask-image: url('https://api.iconify.design/mdi:calendar.svg');
+    -webkit-mask-image: url('https://api.iconify.design/mdi:calendar.svg');
+}
+
+.icon-calendar-lg {
+    width: 16px;
+    height: 16px;
+    mask-image: url('https://api.iconify.design/mdi:calendar.svg');
+    -webkit-mask-image: url('https://api.iconify.design/mdi:calendar.svg');
+}
+
+/* Bell Icon */
+.icon-bell {
+    width: 20px;
+    height: 20px;
+    mask-image: url('https://api.iconify.design/mdi:bell.svg');
+    -webkit-mask-image: url('https://api.iconify.design/mdi:bell.svg');
+}
+
+/* Trophy Icon */
+.icon-trophy {
+    width: 20px;
+    height: 20px;
+    mask-image: url('https://api.iconify.design/mdi:trophy.svg');
+    -webkit-mask-image: url('https://api.iconify.design/mdi:trophy.svg');
+}
+
+.icon-trophy-sm {
+    width: 24px;
+    height: 24px;
+    mask-image: url('https://api.iconify.design/mdi:trophy.svg');
+    -webkit-mask-image: url('https://api.iconify.design/mdi:trophy.svg');
+}
+
+/* Chart Line Icon */
+.icon-chart-line {
+    width: 20px;
+    height: 20px;
+    mask-image: url('https://api.iconify.design/mdi:chart-line.svg');
+    -webkit-mask-image: url('https://api.iconify.design/mdi:chart-line.svg');
+}
+
+/* Fire Icon */
+.icon-fire {
+    width: 16px;
+    height: 16px;
+    mask-image: url('https://api.iconify.design/mdi:fire.svg');
+    -webkit-mask-image: url('https://api.iconify.design/mdi:fire.svg');
+}
+
+/* Trending Up Icon */
+.icon-trending-up {
+    width: 16px;
+    height: 16px;
+    mask-image: url('https://api.iconify.design/mdi:trending-up.svg');
+    -webkit-mask-image: url('https://api.iconify.design/mdi:trending-up.svg');
+}
+
+/* Sparkles Icon */
+.icon-sparkles {
+    width: 20px;
+    height: 20px;
+    mask-image: url('https://api.iconify.design/mdi:sparkles.svg');
+    -webkit-mask-image: url('https://api.iconify.design/mdi:sparkles.svg');
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+/* Quick Access Icons */
+.icon-microphone {
+    width: 24px;
+    height: 24px;
+    mask-image: url('https://api.iconify.design/mdi:microphone.svg');
+    -webkit-mask-image: url('https://api.iconify.design/mdi:microphone.svg');
+}
+
+.icon-drama-masks {
+    width: 24px;
+    height: 24px;
+    mask-image: url('https://api.iconify.design/mdi:drama-masks.svg');
+    -webkit-mask-image: url('https://api.iconify.design/mdi:drama-masks.svg');
+}
+
+.icon-violin {
+    width: 24px;
+    height: 24px;
+    mask-image: url('https://api.iconify.design/mdi:violin.svg');
+    -webkit-mask-image: url('https://api.iconify.design/mdi:violin.svg');
+}
+
+.icon-tent {
+    width: 24px;
+    height: 24px;
+    mask-image: url('https://api.iconify.design/mdi:tent.svg');
+    -webkit-mask-image: url('https://api.iconify.design/mdi:tent.svg');
+}
+
+.icon-image {
+    width: 24px;
+    height: 24px;
+    mask-image: url('https://api.iconify.design/mdi:image.svg');
+    -webkit-mask-image: url('https://api.iconify.design/mdi:image.svg');
+}
+
+/* Icon Color Variants */
+.slide-date-icon {
+    color: rgba(255, 255, 255, 0.9);
+    flex-shrink: 0;
+}
+
+.card-title-icon {
+    position: relative;
+    z-index: 1;
+}
+
+.card-list-subtitle-icon {
+    color: #667eea;
+    flex-shrink: 0;
+}
+
+.show-card-date-icon {
+    color: #667eea;
+    flex-shrink: 0;
+}
+
+.quick-access-icon {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    transition: transform 0.3s ease;
+}
+
+.quick-access-button:hover .quick-access-icon {
+    transform: scale(1.1);
+}

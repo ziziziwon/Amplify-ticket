@@ -1,0 +1,75 @@
+[
+  {
+    "venueId": "kspodome",
+    "name": "KSPO DOME (올림픽체조경기장)",
+    "city": "Seoul",
+    "address": "서울특별시 송파구 올림픽로 424",
+    "lat": 37.5196,
+    "lng": 127.1036,
+    "capacity": 15000,
+    "seatMapFile": "kspodome.json",
+    "description": "올림픽공원 내 위치한 대형 실내 공연장",
+    "imageUrl": "/images/venues/kspodome.jpg"
+  },
+  {
+    "venueId": "gocheok",
+    "name": "고척스카이돔",
+    "city": "Seoul",
+    "address": "서울특별시 구로구 경인로 430",
+    "lat": 37.4982,
+    "lng": 126.8672,
+    "capacity": 25000,
+    "seatMapFile": "gocheok.json",
+    "description": "국내 최대 규모 돔 경기장",
+    "imageUrl": "/images/venues/gocheok.jpg"
+  },
+  {
+    "venueId": "olympic_hall",
+    "name": "올림픽공원 올림픽홀",
+    "city": "Seoul",
+    "address": "서울특별시 송파구 올림픽로 424",
+    "lat": 37.5215,
+    "lng": 127.1225,
+    "capacity": 3500,
+    "seatMapFile": "olympic_hall.json",
+    "description": "중소규모 실내 공연장",
+    "imageUrl": "/images/venues/olympic_hall.jpg"
+  },
+  {
+    "venueId": "handball_stadium",
+    "name": "올림픽공원 핸드볼경기장",
+    "city": "Seoul",
+    "address": "서울특별시 송파구 올림픽로 424",
+    "lat": 37.5204,
+    "lng": 127.1198,
+    "capacity": 6000,
+    "seatMapFile": "handball_stadium.json",
+    "description": "중형 실내 공연장",
+    "imageUrl": "/images/venues/handball_stadium.jpg"
+  },
+  {
+    "venueId": "jamsil_arena",
+    "name": "잠실실내체육관",
+    "city": "Seoul",
+    "address": "서울특별시 송파구 올림픽로 25",
+    "lat": 37.5112,
+    "lng": 127.0737,
+    "capacity": 13000,
+    "seatMapFile": "jamsil_arena.json",
+    "description": "잠실종합운동장 내 대형 실내체육관",
+    "imageUrl": "/images/venues/jamsil_arena.jpg"
+  },
+  {
+    "venueId": "bexco",
+    "name": "BEXCO (부산전시컨벤션센터)",
+    "city": "Busan",
+    "address": "부산광역시 해운대구 APEC로 55",
+    "lat": 35.1688,
+    "lng": 129.1359,
+    "capacity": 4500,
+    "seatMapFile": "bexco.json",
+    "description": "부산 해운대 위치 전시컨벤션센터",
+    "imageUrl": "/images/venues/bexco.jpg"
+  }
+]
+

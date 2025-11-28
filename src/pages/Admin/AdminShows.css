@@ -1,0 +1,158 @@
+/* Admin Shows */
+.admin-shows-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px;
+  margin-top: 24px;
+}
+
+.admin-shows-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.admin-shows-title {
+  font-weight: 800;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 4px;
+  font-size: 32px;
+  position: relative;
+}
+
+.admin-shows-title::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 2px;
+}
+
+.admin-shows-subtitle {
+  color: #999;
+  font-size: 14px;
+}
+
+.admin-shows-button {
+  padding: 10px 24px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+  transition: all 0.2s;
+}
+
+.admin-shows-button:hover {
+  background: linear-gradient(135deg, #5568d3 0%, #65398b 100%);
+  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+  transform: translateY(-1px);
+}
+
+.admin-shows-search {
+  margin-bottom: 24px;
+  max-width: 500px;
+}
+
+.admin-shows-loading {
+  display: flex;
+  justify-content: center;
+  padding: 64px 0;
+}
+
+.admin-shows-table-container {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  border: none;
+  background: #fff;
+  overflow: hidden;
+}
+
+.admin-shows-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-shows-table-head {
+  background: #fafafa;
+}
+
+.admin-shows-table-header-cell {
+  padding: 16px;
+  font-weight: 700;
+  color: #333;
+  text-align: left;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.admin-shows-table-row {
+  border-bottom: 1px solid #e0e0e0;
+  transition: background 0.2s;
+}
+
+.admin-shows-table-row:hover {
+  background: rgba(102, 126, 234, 0.03);
+}
+
+.admin-shows-table-cell {
+  padding: 16px;
+  color: #666;
+}
+
+.admin-shows-poster {
+  width: 50px;
+  height: 70px;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.admin-shows-artist {
+  font-weight: 600;
+  color: #111;
+}
+
+.admin-shows-empty {
+  text-align: center;
+  padding: 64px 32px;
+  color: #999;
+}
+
+.admin-shows-status-badge {
+  padding: 4px 12px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  font-weight: 600;
+  font-size: 11px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.admin-shows-action-button {
+  padding: 6px 16px;
+  border: 1px solid #667eea;
+  color: #667eea;
+  background: #fff;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.admin-shows-action-button:hover {
+  border-color: #5568d3;
+  background: rgba(102, 126, 234, 0.05);
+}
+
+

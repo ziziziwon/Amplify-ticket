@@ -1,0 +1,307 @@
+/* Footer Base */
+.footer {
+  background: #1a1a1a;
+  color: #9CA3AF;
+  padding-top: 48px;
+  padding-bottom: 24px;
+  margin-top: 80px;
+  border-top: 1px solid #2a2a2a;
+  position: relative;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #2a2a2a 20%, #2a2a2a 80%, transparent);
+}
+
+.footer-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Footer Grid */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1.2fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+/* Company Info */
+.footer-company {
+  padding-right: 24px;
+}
+
+.footer-logo {
+  margin-bottom: 24px;
+  filter: brightness(0) saturate(100%) invert(48%) sepia(21%) saturate(1235%) hue-rotate(214deg) brightness(91%) contrast(90%);
+}
+
+.footer-tagline {
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: #D1D5DB;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+  font-weight: 600;
+  letter-spacing: -0.3px;
+  line-height: 1.5;
+}
+
+.footer-description {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #9CA3AF;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+/* Footer Section */
+.footer-section-title {
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 20px;
+  font-size: 15px;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+  position: relative;
+}
+
+.footer-section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: linear-gradient(90deg, #7062A6, transparent);
+}
+
+.footer-section-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Footer Link */
+.footer-link {
+  color: #9CA3AF;
+  text-decoration: none;
+  font-size: 13px;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+  transition: all 0.2s ease;
+  display: block;
+  position: relative;
+  padding-left: 0;
+}
+
+.footer-link::before {
+  content: "→";
+  position: absolute;
+  left: -16px;
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+
+.footer-link:hover {
+  color: #7062A6;
+  transform: translateX(4px);
+  padding-left: 16px;
+}
+
+.footer-link:hover::before {
+  opacity: 1;
+  left: 0;
+}
+
+.footer-link-primary {
+  color: #D1D5DB;
+  font-weight: 600;
+}
+
+.footer-link-primary:hover {
+  color: #FF8C55;
+}
+
+/* Contact Info */
+.footer-contact-item {
+  margin-bottom: 8px;
+}
+
+.footer-contact-label {
+  font-size: 12px;
+  color: #7062A6;
+  margin-bottom: 4px;
+  font-weight: 600;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.footer-contact-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: #D1D5DB;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.footer-contact-time {
+  font-size: 12px;
+  color: #6B7280;
+  line-height: 1.6;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+/* Divider */
+.footer-divider {
+  border: none;
+  border-top: 1px solid #2a2a2a;
+  margin: 32px 0;
+  position: relative;
+}
+
+.footer-divider::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #2a2a2a 20%, #2a2a2a 80%, transparent);
+}
+
+/* Business Info */
+.footer-business {
+  margin-bottom: 32px;
+}
+
+.footer-business-text {
+  font-size: 11.5px;
+  line-height: 2;
+  color: #6B7280;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.footer-business-link {
+  color: #7062A6;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.footer-business-link:hover {
+  text-decoration: underline;
+  color: #8B7FC7;
+}
+
+/* Bottom Section */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 24px 0;
+  border-top: 1px solid #2a2a2a;
+  position: relative;
+}
+
+.footer-bottom::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #2a2a2a 20%, #2a2a2a 80%, transparent);
+}
+
+.footer-copyright {
+  font-size: 11.5px;
+  color: #6B7280;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.footer-social {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-social-link {
+  color: #6B7280;
+  font-size: 11.5px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+  position: relative;
+}
+
+.footer-social-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.2s;
+}
+
+.footer-social-link:hover {
+  color: #FF8C55;
+}
+
+.footer-social-link:hover::after {
+  width: 100%;
+}
+
+.footer-social-link:nth-child(2):hover {
+  color: #7062A6;
+}
+
+.footer-social-link:nth-child(3):hover {
+  color: #4C4F7A;
+}
+
+/* Legal Notice */
+.footer-legal {
+  padding-bottom: 16px;
+}
+
+.footer-legal-text {
+  font-size: 10.5px;
+  line-height: 1.8;
+  color: #555;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  
+  .footer-company {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  
+  .footer-container {
+    padding: 0 16px;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+

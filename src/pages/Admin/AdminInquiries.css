@@ -1,0 +1,464 @@
+.admin-inquiries-page {
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+.admin-inquiries-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+.admin-inquiries-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.admin-inquiries-header-text {
+  flex: 1;
+}
+
+.admin-inquiries-title {
+  font-size: 32px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0 0 4px 0;
+  font-family: "General Sans, SUIT, sans-serif";
+}
+
+.admin-inquiries-subtitle {
+  font-size: 14px;
+  color: #999;
+  margin: 0;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.admin-inquiries-filters {
+  display: flex;
+  gap: 12px;
+}
+
+.admin-inquiries-filter-select {
+  padding: 8px 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+  background: white;
+  cursor: pointer;
+  min-width: 130px;
+}
+
+.admin-inquiries-filter-select:focus {
+  outline: none;
+  border-color: #4c4f7a;
+}
+
+.admin-inquiries-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+@media (min-width: 600px) {
+  .admin-inquiries-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.admin-inquiries-stat-card {
+  padding: 24px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  background: white;
+  transition: all 0.2s ease;
+}
+
+.admin-inquiries-stat-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.admin-inquiries-stat-label {
+  font-size: 14px;
+  color: #999;
+  margin: 0 0 8px 0;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.admin-inquiries-stat-value {
+  font-size: 32px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+  font-family: "General Sans, sans-serif";
+}
+
+.admin-inquiries-stat-value-orange {
+  color: #f59e0b;
+  background: none;
+  -webkit-text-fill-color: #f59e0b;
+}
+
+.admin-inquiries-table-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+}
+
+.admin-inquiries-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-inquiries-table thead {
+  background: #fafafa;
+}
+
+.admin-inquiries-table th {
+  padding: 16px;
+  text-align: left;
+  font-weight: 700;
+  color: #232323;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+  font-size: 14px;
+}
+
+.admin-inquiries-th-expand {
+  width: 50px;
+}
+
+.admin-inquiries-th-center {
+  text-align: center;
+}
+
+.admin-inquiries-table-row {
+  border-bottom: 1px solid #e0e0e0;
+  transition: background-color 0.2s ease;
+}
+
+.admin-inquiries-table-row:hover {
+  background: #f5f5f5;
+}
+
+.admin-inquiries-table td {
+  padding: 16px;
+  font-size: 14px;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.admin-inquiries-td-center {
+  text-align: center;
+}
+
+.admin-inquiries-expand-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  color: #707070;
+  transition: color 0.2s ease;
+}
+
+.admin-inquiries-expand-button:hover {
+  color: #4c4f7a;
+}
+
+.admin-inquiries-category-chip {
+  display: inline-block;
+  padding: 4px 12px;
+  background: #e8eaf6;
+  color: #4c4f7a;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.admin-inquiries-title-text {
+  font-weight: 600;
+  color: #232323;
+  margin: 0;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.admin-inquiries-email {
+  color: #707070;
+  margin: 0;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.admin-inquiries-date {
+  color: #707070;
+  margin: 0;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.admin-inquiries-status-chip {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+  height: 24px;
+  line-height: 16px;
+}
+
+.admin-inquiries-status-chip.answered {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.admin-inquiries-status-chip.pending {
+  background: #f59e0b;
+  color: white;
+}
+
+.admin-inquiries-answer-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: transparent;
+  border: none;
+  color: #4c4f7a;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+  border-radius: 6px;
+}
+
+.admin-inquiries-answer-button:hover {
+  background: rgba(76, 79, 122, 0.1);
+}
+
+.admin-inquiries-empty-cell {
+  padding: 64px 16px;
+  text-align: center;
+}
+
+.admin-inquiries-loading-text,
+.admin-inquiries-empty-text {
+  color: #707070;
+  margin: 0;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.admin-inquiries-expanded-row {
+  background: #f5f5f5;
+}
+
+.admin-inquiries-expanded-cell {
+  padding: 0;
+  border-top: 1px solid #d7d7d7;
+}
+
+.admin-inquiries-expanded-content {
+  padding: 24px;
+}
+
+.admin-inquiries-expanded-section {
+  margin-bottom: 24px;
+}
+
+.admin-inquiries-expanded-section:last-child {
+  margin-bottom: 0;
+}
+
+.admin-inquiries-expanded-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: #232323;
+  margin: 0 0 8px 0;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.admin-inquiries-expanded-label-answer {
+  color: #4c4f7a;
+}
+
+.admin-inquiries-expanded-text {
+  font-size: 14px;
+  color: #707070;
+  margin: 0 0 8px 0;
+  white-space: pre-wrap;
+  line-height: 1.7;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.admin-inquiries-expanded-answer {
+  padding: 16px;
+  background: #f0f0ff;
+  border: 1px solid #d0d0f0;
+  border-radius: 8px;
+}
+
+.admin-inquiries-expanded-answer .admin-inquiries-expanded-text {
+  color: #232323;
+}
+
+.admin-inquiries-expanded-date {
+  font-size: 12px;
+  color: #707070;
+  margin: 8px 0 0 0;
+  padding-top: 8px;
+  border-top: 1px solid #e0e0f0;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.admin-inquiries-dialog-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.admin-inquiries-dialog {
+  background: white;
+  border-radius: 12px;
+  min-width: 600px;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: auto;
+}
+
+.admin-inquiries-dialog-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+  padding: 24px 24px 0 24px;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.admin-inquiries-dialog-content {
+  padding: 24px;
+}
+
+.admin-inquiries-dialog-inquiry-box {
+  padding: 16px;
+  margin-bottom: 24px;
+  background: #f5f5f5;
+  border-radius: 8px;
+}
+
+.admin-inquiries-dialog-category-chip {
+  display: inline-block;
+  padding: 4px 12px;
+  background: #e8eaf6;
+  color: #4c4f7a;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.admin-inquiries-dialog-inquiry-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #232323;
+  margin: 0 0 8px 0;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.admin-inquiries-dialog-inquiry-content {
+  font-size: 14px;
+  color: #707070;
+  margin: 0 0 16px 0;
+  white-space: pre-wrap;
+  line-height: 1.7;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.admin-inquiries-dialog-inquiry-meta {
+  font-size: 12px;
+  color: #707070;
+  margin: 0;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.admin-inquiries-dialog-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.admin-inquiries-dialog-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #232323;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.admin-inquiries-dialog-textarea {
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+  resize: vertical;
+  min-height: 200px;
+}
+
+.admin-inquiries-dialog-textarea:focus {
+  outline: none;
+  border-color: #4c4f7a;
+  border-width: 2px;
+}
+
+.admin-inquiries-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 0 24px 24px 24px;
+}
+
+.admin-inquiries-dialog-button {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.admin-inquiries-dialog-button-cancel {
+  background: transparent;
+  color: #707070;
+}
+
+.admin-inquiries-dialog-button-cancel:hover {
+  background: #f5f5f5;
+}
+
+.admin-inquiries-dialog-button-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.admin-inquiries-dialog-button-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+

@@ -1,0 +1,82 @@
+/* Unified Admin Header */
+.unified-admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.unified-admin-header-left {
+  flex: 1;
+}
+
+.unified-admin-header-title {
+  font-weight: 800;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 4px;
+  font-family: "General Sans, SUIT, sans-serif";
+  font-size: 32px;
+  position: relative;
+}
+
+.unified-admin-header-title::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 2px;
+}
+
+.unified-admin-header-subtitle {
+  color: #999;
+  font-size: 14px;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.unified-admin-header-button {
+  padding: 10px 24px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+  transition: all 0.2s;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.unified-admin-header-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.unified-admin-header-button:hover::before {
+  left: 100%;
+}
+
+.unified-admin-header-button:hover {
+  background: linear-gradient(135deg, #5568d3 0%, #65398b 100%);
+  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+  transform: translateY(-1px);
+}
+
+

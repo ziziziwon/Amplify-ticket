@@ -1,0 +1,255 @@
+.payment-success-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--spacing-xl);
+}
+
+.payment-success-loading,
+.payment-success-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: var(--spacing-md);
+}
+
+.payment-success-spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid var(--background-paper);
+  border-top: 4px solid var(--primary-main);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.payment-success-error h2 {
+  font-size: 24px;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.payment-success-error p {
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.payment-success-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+/* 헤더 */
+.payment-success-header {
+  text-align: center;
+  padding: var(--spacing-xl) 0;
+}
+
+.payment-success-icon {
+  color: #10b981;
+  margin-bottom: var(--spacing-md);
+  animation: scale-in 0.5s ease-out;
+}
+
+@keyframes scale-in {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.payment-success-title {
+  font-size: 32px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 0 var(--spacing-sm) 0;
+}
+
+.payment-success-subtitle {
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* 티켓 카드 */
+.payment-success-ticket-card {
+  background: white;
+  border-radius: 16px;
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  gap: var(--spacing-lg);
+}
+
+.payment-success-poster {
+  width: 200px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.payment-success-ticket-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.payment-success-show-name {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.payment-success-show-tour {
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.payment-success-ticket-details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-top: auto;
+}
+
+.payment-success-detail-row {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.payment-success-detail-row svg {
+  color: var(--primary-main);
+}
+
+/* 예매자 정보 */
+.payment-success-buyer-card {
+  background: white;
+  border-radius: 12px;
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.payment-success-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 var(--spacing-lg) 0;
+}
+
+.payment-success-buyer-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.payment-success-buyer-row {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--spacing-sm) 0;
+  border-bottom: 1px solid var(--border-light);
+  font-size: 14px;
+}
+
+.payment-success-buyer-row:last-child {
+  border-bottom: none;
+}
+
+.payment-success-buyer-row span:first-child {
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.payment-success-buyer-row span:last-child {
+  color: var(--text-primary);
+}
+
+/* 액션 버튼 */
+.payment-success-actions {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.payment-success-button {
+  flex: 1;
+  padding: 16px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+}
+
+.payment-success-button-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.payment-success-button-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3);
+}
+
+.payment-success-button-secondary {
+  background: white;
+  color: var(--text-primary);
+  border: 2px solid var(--border-light);
+}
+
+.payment-success-button-secondary:hover {
+  background: var(--background-paper);
+  border-color: var(--primary-main);
+}
+
+/* 반응형 */
+@media (max-width: 640px) {
+  .payment-success-container {
+    padding: var(--spacing-md);
+  }
+
+  .payment-success-title {
+    font-size: 24px;
+  }
+
+  .payment-success-ticket-card {
+    flex-direction: column;
+  }
+
+  .payment-success-poster {
+    width: 100%;
+    height: 200px;
+  }
+
+  .payment-success-actions {
+    flex-direction: column;
+  }
+}
+
+

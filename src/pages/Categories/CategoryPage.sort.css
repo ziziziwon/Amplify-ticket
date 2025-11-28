@@ -1,0 +1,75 @@
+/* Sort Buttons */
+.category-sort-wrapper {
+  display: inline-flex;
+  background: #f5f5f5;
+  border-radius: 12px;
+  padding: 4px;
+  gap: 4px;
+}
+
+.category-sort-button {
+  text-transform: none;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 6px 20px;
+  border-radius: 10px;
+  border: none;
+  background: transparent;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+  position: relative;
+  overflow: hidden;
+}
+
+.category-sort-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  opacity: 0;
+  transition: opacity 0.2s;
+  z-index: -1;
+}
+
+.category-sort-button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 100%;
+  height: 100%;
+  background: rgba(102, 126, 234, 0.1);
+  border-radius: 10px;
+  transition: transform 0.2s;
+  z-index: -2;
+}
+
+.category-sort-button:hover::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.category-sort-button:hover {
+  color: #667eea;
+}
+
+.category-sort-button.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  font-weight: 600;
+}
+
+.category-sort-button.active::before {
+  opacity: 1;
+}
+
+.category-sort-button.active::after {
+  display: none;
+}
+
+

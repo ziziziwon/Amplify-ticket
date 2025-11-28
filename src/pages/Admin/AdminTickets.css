@@ -1,0 +1,397 @@
+.admin-tickets-page {
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+.admin-tickets-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+.admin-tickets-header {
+  margin-bottom: 24px;
+}
+
+.admin-tickets-title {
+  font-size: 32px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0 0 4px 0;
+  font-family: "General Sans, SUIT, sans-serif";
+}
+
+.admin-tickets-subtitle {
+  font-size: 14px;
+  color: #999;
+  margin: 0;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.admin-tickets-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+@media (min-width: 900px) {
+  .admin-tickets-stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.admin-tickets-stat-card {
+  padding: 24px;
+  border: 1px solid #d7d7d7;
+  border-radius: 8px;
+  background: white;
+  transition: all 0.2s ease;
+}
+
+.admin-tickets-stat-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.admin-tickets-stat-label {
+  font-size: 14px;
+  color: #707070;
+  margin: 0 0 8px 0;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.admin-tickets-stat-value {
+  font-size: 32px;
+  font-weight: 800;
+  color: #4c4f7a;
+  margin: 0;
+  font-family: "General Sans, sans-serif";
+}
+
+.admin-tickets-search-card {
+  padding: 24px;
+  margin-bottom: 24px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  background: white;
+}
+
+.admin-tickets-search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.admin-tickets-search-icon {
+  position: absolute;
+  left: 16px;
+  color: #707070;
+  pointer-events: none;
+}
+
+.admin-tickets-search-input {
+  width: 100%;
+  padding: 12px 16px 12px 48px;
+  font-size: 15px;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+  background: #fafafa;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.admin-tickets-search-input:hover {
+  background: #f5f5f5;
+  border-color: #667eea;
+}
+
+.admin-tickets-search-input:focus {
+  outline: none;
+  background: white;
+  border-color: #667eea;
+  border-width: 2px;
+}
+
+.admin-tickets-table-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+}
+
+.admin-tickets-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-tickets-table thead {
+  background: #fafafa;
+}
+
+.admin-tickets-table th {
+  padding: 16px;
+  text-align: left;
+  font-weight: 700;
+  color: #232323;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+  font-size: 14px;
+}
+
+.admin-tickets-th-action {
+  text-align: center;
+}
+
+.admin-tickets-table-row {
+  border-bottom: 1px solid #e0e0e0;
+  transition: background-color 0.2s ease;
+}
+
+.admin-tickets-table-row:hover {
+  background: #f5f5f5;
+}
+
+.admin-tickets-table td {
+  padding: 16px;
+  font-size: 14px;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.admin-tickets-td-action {
+  text-align: center;
+}
+
+.admin-tickets-order-id {
+  font-weight: 600;
+  color: #232323;
+  margin: 0;
+  font-family: "General Sans, sans-serif";
+  font-size: 12px;
+}
+
+.admin-tickets-email {
+  color: #707070;
+  margin: 0;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.admin-tickets-show-title {
+  font-weight: 600;
+  color: #232323;
+  margin: 0;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.admin-tickets-date {
+  color: #707070;
+  margin: 0;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.admin-tickets-seat-count {
+  color: #707070;
+  margin: 0;
+  font-family: "General Sans, sans-serif";
+}
+
+.admin-tickets-amount {
+  font-weight: 600;
+  color: #4c4f7a;
+  margin: 0;
+  font-family: "General Sans, sans-serif";
+}
+
+.admin-tickets-status-chip {
+  display: inline-block;
+  padding: 4px 12px;
+  color: white;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+  height: 24px;
+  line-height: 16px;
+}
+
+.admin-tickets-action-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  color: #707070;
+  transition: all 0.2s ease;
+  border-radius: 4px;
+}
+
+.admin-tickets-action-button:hover {
+  background: rgba(76, 79, 122, 0.1);
+  color: #4c4f7a;
+}
+
+.admin-tickets-empty-cell {
+  padding: 64px 16px;
+  text-align: center;
+}
+
+.admin-tickets-loading-text,
+.admin-tickets-empty-text {
+  color: #707070;
+  margin: 0 0 8px 0;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.admin-tickets-empty-subtext {
+  color: #999;
+  margin: 0;
+  font-size: 12px;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.admin-tickets-action-menu {
+  position: fixed;
+  background: white;
+  border: 1px solid #d7d7d7;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  min-width: 150px;
+  overflow: hidden;
+}
+
+.admin-tickets-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px 16px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+  font-size: 14px;
+  color: #232323;
+}
+
+.admin-tickets-menu-item:hover {
+  background: #f5f5f5;
+}
+
+.admin-tickets-menu-item-danger {
+  color: #ff8c55;
+}
+
+.admin-tickets-dialog-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.admin-tickets-dialog {
+  background: white;
+  border-radius: 12px;
+  min-width: 400px;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: auto;
+}
+
+.admin-tickets-dialog-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+  padding: 24px 24px 0 24px;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.admin-tickets-dialog-content {
+  padding: 24px;
+}
+
+.admin-tickets-dialog-warning {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  background: #fff3cd;
+  border: 1px solid #ffc107;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.admin-tickets-dialog-warning p {
+  margin: 0;
+  color: #856404;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+  font-size: 14px;
+}
+
+.admin-tickets-dialog-info {
+  margin-bottom: 16px;
+}
+
+.admin-tickets-dialog-info p {
+  font-size: 16px;
+  color: #232323;
+  margin: 0 0 8px 0;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+  line-height: 1.6;
+}
+
+.admin-tickets-dialog-note {
+  font-size: 14px;
+  color: #707070;
+  margin: 0;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.admin-tickets-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 0 24px 24px 24px;
+}
+
+.admin-tickets-dialog-button {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.admin-tickets-dialog-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.admin-tickets-dialog-button-cancel {
+  background: transparent;
+  color: #707070;
+}
+
+.admin-tickets-dialog-button-cancel:hover:not(:disabled) {
+  background: #f5f5f5;
+}
+
+.admin-tickets-dialog-button-danger {
+  background: #ff8c55;
+  color: white;
+}
+
+.admin-tickets-dialog-button-danger:hover:not(:disabled) {
+  background: #e67a45;
+}
+
+

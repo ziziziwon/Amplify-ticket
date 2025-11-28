@@ -1,0 +1,107 @@
+/* Pagination */
+.category-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 48px;
+  margin-bottom: 32px;
+}
+
+.category-pagination-button {
+  min-width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  background: #fff;
+  color: #667eea;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+}
+
+.category-pagination-button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 100%;
+  height: 100%;
+  background: rgba(102, 126, 234, 0.1);
+  border-radius: 8px;
+  transition: transform 0.2s;
+  z-index: -1;
+}
+
+.category-pagination-button:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.category-pagination-button:hover {
+  border-color: #667eea;
+  background: rgba(102, 126, 234, 0.05);
+  transform: translateY(-2px);
+}
+
+.category-pagination-button:disabled {
+  border-color: #e0e0e0;
+  color: #ccc;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.category-pagination-button:disabled::before {
+  display: none;
+}
+
+.category-pagination-button:disabled:hover {
+  transform: none;
+}
+
+.category-pagination-button.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  font-weight: 700;
+  border-color: transparent;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.category-pagination-button.active::before {
+  display: none;
+}
+
+.category-pagination-button.active::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 8px;
+  z-index: -1;
+  opacity: 0.3;
+  filter: blur(4px);
+}
+
+.category-pagination-button.active:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+/* Icon Buttons */
+.category-pagination-icon {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+

@@ -1,0 +1,520 @@
+.ticketdetail-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 16px 24px;
+}
+
+.ticketdetail-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.ticketdetail-spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 16px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.ticketdetail-error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.ticketdetail-error-text {
+  font-size: 16px;
+  color: #707070;
+  margin: 16px 0 32px;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.ticketdetail-error-title {
+  font-size: 24px;
+  color: #707070;
+  margin: 0 0 24px 0;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.ticketdetail-error-button {
+  padding: 12px 32px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.ticketdetail-error-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.ticketdetail-info-section {
+  margin-bottom: 24px;
+}
+
+.ticketdetail-info-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #232323;
+  margin: 0 0 16px 0;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.ticketdetail-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.ticketdetail-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ticketdetail-info-label {
+  font-size: 13px;
+  color: #707070;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.ticketdetail-info-value {
+  font-size: 15px;
+  color: #232323;
+  font-weight: 600;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.ticketdetail-seats-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ticketdetail-seat-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: #f5f5f5;
+  border-radius: 8px;
+}
+
+.ticketdetail-seat-grade {
+  font-size: 14px;
+  font-weight: 700;
+  color: #667eea;
+  min-width: 60px;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.ticketdetail-seat-info {
+  flex: 1;
+  font-size: 14px;
+  color: #232323;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.ticketdetail-seat-price {
+  font-size: 14px;
+  font-weight: 600;
+  color: #232323;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.ticketdetail-no-seats {
+  font-size: 14px;
+  color: #707070;
+  text-align: center;
+  padding: 24px;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.ticketdetail-status-chip.cancelled {
+  background: #e74c3c;
+  color: white;
+}
+
+.ticketdetail-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.ticketdetail-back-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  margin-right: 16px;
+  color: #232323;
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ticketdetail-back-button:hover {
+  color: #4c4f7a;
+}
+
+.ticketdetail-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #232323;
+  margin: 0;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.ticketdetail-card {
+  border: 1px solid #d7d7d7;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 24px;
+  background: white;
+}
+
+.ticketdetail-card-header {
+  background: linear-gradient(135deg, #4c4f7a 0%, #7062a6 100%);
+  color: white;
+  padding: 32px;
+  position: relative;
+}
+
+.ticketdetail-status-chip {
+  display: inline-block;
+  padding: 4px 12px;
+  background: #ff8c55;
+  color: white;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.ticketdetail-artist {
+  font-size: 32px;
+  font-weight: 800;
+  margin: 0 0 8px 0;
+  font-family: "General Sans, SUIT, sans-serif";
+}
+
+.ticketdetail-tourname {
+  font-size: 18px;
+  opacity: 0.95;
+  font-weight: 500;
+  margin: 0;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.ticketdetail-card-content {
+  padding: 32px;
+}
+
+.ticketdetail-qr-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 32px;
+  padding: 16px 0;
+}
+
+.ticketdetail-qr-label {
+  font-size: 14px;
+  color: #707070;
+  margin: 0 0 16px 0;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.ticketdetail-qr-wrapper {
+  padding: 24px;
+  background: white;
+  border-radius: 12px;
+  border: 2px dashed #d7d7d7;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.ticketdetail-qr-orderid {
+  font-size: 12px;
+  color: #707070;
+  text-align: center;
+  margin: 16px 0 0 0;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.ticketdetail-divider {
+  border: none;
+  border-top: 1px solid #e0e0e0;
+  margin: 24px 0;
+}
+
+.ticketdetail-section {
+  margin-bottom: 32px;
+}
+
+.ticketdetail-section-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #707070;
+  margin: 0 0 16px 0;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.ticketdetail-info-box {
+  background: #f5f5f5;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.ticketdetail-info-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.ticketdetail-info-row:last-child {
+  margin-bottom: 0;
+}
+
+.ticketdetail-info-label {
+  font-size: 14px;
+  color: #707070;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.ticketdetail-info-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: #232323;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.ticketdetail-seats-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ticketdetail-seat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  border: 1px solid #d7d7d7;
+}
+
+.ticketdetail-seat-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.ticketdetail-seat-number {
+  display: inline-block;
+  padding: 4px 12px;
+  background: #4c4f7a;
+  color: white;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  min-width: 45px;
+  text-align: center;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.ticketdetail-seat-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ticketdetail-seat-grade {
+  font-size: 14px;
+  font-weight: 600;
+  color: #232323;
+  margin: 0;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.ticketdetail-seat-detail {
+  font-size: 12px;
+  color: #707070;
+  margin: 0;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.ticketdetail-seat-price {
+  font-size: 16px;
+  font-weight: 700;
+  color: #4c4f7a;
+  font-family: "General Sans, sans-serif";
+}
+
+.ticketdetail-total-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+  background: #4c4f7a;
+  border-radius: 8px;
+}
+
+.ticketdetail-total-label {
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.ticketdetail-total-value {
+  font-size: 24px;
+  font-weight: 800;
+  color: white;
+  margin: 0;
+  font-family: "General Sans, sans-serif";
+}
+
+.ticketdetail-actions {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.ticketdetail-action-button {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.ticketdetail-action-button-primary {
+  border: 1px solid #4c4f7a;
+  color: #4c4f7a;
+  background: transparent;
+}
+
+.ticketdetail-action-button-primary:hover {
+  background: rgba(76, 79, 122, 0.05);
+  border-color: #4c4f7a;
+}
+
+.ticketdetail-action-button-secondary {
+  border: 1px solid #d7d7d7;
+  color: #707070;
+  background: transparent;
+}
+
+.ticketdetail-action-button-secondary:hover {
+  background: #f5f5f5;
+  border-color: #d7d7d7;
+}
+
+.ticketdetail-action-button::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.ticketdetail-action-button:hover::before {
+  opacity: 1;
+}
+
+.ticketdetail-notice-box {
+  margin-top: 24px;
+  padding: 24px;
+  background: #f5f5f5;
+  border-radius: 8px;
+}
+
+.ticketdetail-notice-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #232323;
+  margin: 0 0 16px 0;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+}
+
+.ticketdetail-notice-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ticketdetail-notice-list li {
+  font-size: 14px;
+  color: #707070;
+  padding-left: 16px;
+  position: relative;
+  font-family: "SUIT, LINE Seed KR, sans-serif";
+  line-height: 1.6;
+}
+
+.ticketdetail-notice-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #4c4f7a;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .ticketdetail-actions {
+    flex-direction: column;
+  }
+
+  .ticketdetail-seat-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .ticketdetail-seat-price {
+    align-self: flex-end;
+  }
+}
+
+

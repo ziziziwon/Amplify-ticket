@@ -1,0 +1,216 @@
+.verification-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 24px 16px;
+  padding-top: 129px;
+}
+
+.verification-card {
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.verification-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.02), rgba(118, 75, 162, 0.02));
+  pointer-events: none;
+}
+
+.verification-card:hover::before {
+  opacity: 1;
+}
+
+.verification-title {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  text-align: center;
+  color: #111;
+}
+
+.verification-subtitle {
+  text-align: center;
+  color: #6b7280;
+  margin-bottom: 32px;
+  font-size: 14px;
+}
+
+.verification-alert {
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.verification-alert-error {
+  background-color: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+.verification-section {
+  margin-bottom: 32px;
+}
+
+.verification-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #374151;
+  font-size: 14px;
+}
+
+.verification-captcha-box {
+  background-color: #f3f4f6;
+  padding: 24px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  text-align: center;
+  border: 2px dashed #d1d5db;
+  position: relative;
+}
+
+.verification-captcha-box::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05));
+}
+
+.verification-captcha-box:hover::before {
+  opacity: 1;
+}
+
+.verification-captcha-text {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 8px;
+  color: #667eea;
+  font-family: monospace;
+  text-decoration: line-through;
+  text-decoration-color: #ef4444;
+  text-decoration-style: wavy;
+  display: inline-block;
+}
+
+.verification-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  background-color: #fff;
+}
+
+.verification-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.verification-input::placeholder {
+  color: #9ca3af;
+}
+
+.verification-helper-text {
+  display: block;
+  margin-top: 8px;
+  color: #9ca3af;
+  font-size: 12px;
+}
+
+.verification-actions {
+  display: flex;
+  gap: 16px;
+}
+
+.verification-button {
+  flex: 1;
+  padding: 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.verification-button-cancel {
+  background-color: #fff;
+  color: #374151;
+  border: 1px solid #d1d5db;
+}
+
+.verification-button-cancel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  background-color: #f9fafb;
+}
+
+.verification-button-cancel:hover::before {
+  opacity: 1;
+}
+
+.verification-button-cancel:hover {
+  border-color: #9ca3af;
+}
+
+.verification-button-submit {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+}
+
+.verification-button-submit::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  background: linear-gradient(135deg, #5568d3 0%, #6a3d8f 100%);
+}
+
+.verification-button-submit:hover::before {
+  opacity: 1;
+}
+
+.verification-button-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+/* Pseudo-elements for design enhancements */
+.verification-input::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  transform: scaleX(0);
+  transition: transform 0.2s ease;
+}
+
+.verification-input:focus::after {
+  transform: scaleX(1);
+}
+
+
