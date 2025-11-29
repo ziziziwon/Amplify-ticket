@@ -1,0 +1,16 @@
+services:
+  # 멜론티켓 백엔드 API 서버
+  - type: web
+    name: amplify-concert-server
+    env: node
+    region: singapore  # 한국과 가까운 리전
+    plan: free  # 무료 플랜 (필요시 starter로 변경)
+    buildCommand: cd concert-server && npm install
+    startCommand: cd concert-server && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000  # Render는 자동으로 PORT 환경 변수를 설정하지만, 기본값 설정
+    healthCheckPath: /health
+

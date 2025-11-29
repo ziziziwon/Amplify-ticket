@@ -236,18 +236,89 @@ npm run build
 
 백엔드 서버(`concert-server`)는 별도로 배포해야 합니다. 카페24는 일반적으로 Node.js 서버를 지원하지 않으므로, 다음 옵션 중 하나를 선택하세요:
 
-#### 옵션 1: 클라우드 서비스 사용 (권장)
+#### 옵션 1: Render 배포 (권장) ⭐
 
-**Railway, Render, Heroku 등:**
+**Render는 무료 플랜을 제공하며, 자동 배포가 가능합니다.**
+
+1. **Render 계정 생성**
+   - [Render.com](https://render.com)에 가입
+   - GitHub 계정으로 연동 권장
+
+2. **GitHub에 코드 푸시**
+   ```bash
+   git add .
+   git commit -m "feat: Render 배포 설정 추가"
+   git push origin main
+   ```
+
+3. **Render에서 서비스 생성**
+   - Render 대시보드에서 "New +" → "Blueprint" 선택
+   - GitHub 저장소 연결
+   - `render.yaml` 파일이 자동으로 감지됨
+   - "Apply" 클릭하여 서비스 생성
+
+4. **또는 수동으로 Web Service 생성**
+   - Render 대시보드에서 "New +" → "Web Service" 선택
+   - GitHub 저장소 연결
+   - 설정:
+     - **Name**: `amplify-concert-server`
+     - **Environment**: `Node`
+     - **Build Command**: `cd concert-server && npm install`
+     - **Start Command**: `cd concert-server && npm start`
+     - **Plan**: `Free` (또는 `Starter`)
+
+5. **환경 변수 설정 (선택사항)**
+   - Render 대시보드 → Environment 탭
+   - `NODE_ENV=production` (자동 설정됨)
+   - `PORT`는 Render가 자동으로 설정
+
+6. **배포 완료 후 URL 확인**
+   - Render 대시보드에서 서비스 URL 확인 (예: `https://amplify-concert-server.onrender.com`)
+   - Health check: `https://amplify-concert-server.onrender.com/health`
+
+7. **프론트엔드 환경 변수 설정**
+   ```bash
+   # .env.production 파일 생성
+   REACT_APP_MELON_API_URL=https://amplify-concert-server.onrender.com
+   ```
+   
+   또는 빌드 시 직접 설정:
+   ```bash
+   REACT_APP_MELON_API_URL=https://amplify-concert-server.onrender.com npm run build
+   ```
+
+**⚠️ Render 무료 플랜 제한사항:**
+- 15분간 요청이 없으면 서버가 sleep 상태로 전환됨
+- 첫 요청 시 약 30초 정도의 cold start 시간이 소요될 수 있음
+- 월 750시간 무료 (약 31일 24시간 운영 가능)
+
+**💡 해결 방법:**
+- Uptime Robot 등의 서비스를 사용하여 5분마다 `/health` 엔드포인트를 호출하여 서버를 깨어있게 유지
+- 또는 Starter 플랜($7/월)으로 업그레이드하여 항상 활성 상태 유지
+
+#### 옵션 2: Railway 배포
+
+**Railway는 더 빠른 응답 속도를 제공합니다.**
+
+1. [Railway.app](https://railway.app)에 가입
+2. "New Project" → "Deploy from GitHub repo" 선택
+3. 저장소 선택 후 `concert-server` 디렉토리 지정
+4. 자동으로 배포됨
+5. 배포 후 받은 URL을 프론트엔드에 설정
+
+#### 옵션 3: Heroku 배포
+
+**Heroku는 안정적인 플랫폼입니다.**
+
 ```bash
 cd concert-server
-# Railway/Render/Heroku에 배포
-# 각 서비스의 가이드에 따라 배포
+heroku create amplify-concert-server
+git push heroku main
 ```
 
 배포 후 받은 URL을 프론트엔드의 `.env.production`에 설정:
 ```env
-REACT_APP_MELON_API_URL=https://your-backend.railway.app
+REACT_APP_MELON_API_URL=https://amplify-concert-server.herokuapp.com
 ```
 
 #### 옵션 2: 별도 VPS 서버 사용
