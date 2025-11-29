@@ -1,15 +1,13 @@
 services:
-  # 멜론티켓 백엔드 API 서버
   - type: web
     name: amplify-concert-server
     env: node
-    region: frankfurt  # 한국과 가까운 리전 (Render는 oregon, frankfurt만 지원)
+    region: frankfurt
     plan: free
     rootDir: concert-server
     buildCommand: npm install
-    startCommand: npm start
+    startCommand: node index.js
     envVars:
       - key: NODE_ENV
         value: production
     healthCheckPath: /health
-
