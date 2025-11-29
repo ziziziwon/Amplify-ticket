@@ -28,16 +28,9 @@ const MELON_TICKET_OPEN_URL = "https://ticket.melon.com/csoon/ajax/listTicketOpe
 const categoryCache = {}; // { category: { data: [...], time: timestamp } }
 const CACHE_DURATION = 5 * 60 * 1000; // 5분
 
-// 서버 상태 확인
+// 서버 상태 확인 (Render health check용)
 app.get("/health", (req, res) => {
-  const cacheKeys = Object.keys(categoryCache);
-  res.json({
-    status: "ok",
-    message: "멜론티켓 진짜 API 서버 (prodList.json)",
-    cachedCategories: cacheKeys,
-    cacheCount: cacheKeys.reduce((sum, key) => sum + (categoryCache[key]?.data?.length || 0), 0),
-    timestamp: new Date().toISOString(),
-  });
+  res.status(200).send("OK");
 });
 
 // ⭐ 캐시 클리어
