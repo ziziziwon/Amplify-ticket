@@ -3,15 +3,13 @@ services:
   - type: web
     name: amplify-concert-server
     env: node
-    region: singapore  # 한국과 가까운 리전
-    plan: free  # 무료 플랜 (필요시 starter로 변경)
-    rootDir: concert-server  # 서비스 루트 디렉토리 지정
+    region: frankfurt  # 한국과 가까운 리전 (Render는 oregon, frankfurt만 지원)
+    plan: free
+    rootDir: concert-server
     buildCommand: npm install
     startCommand: npm start
     envVars:
       - key: NODE_ENV
         value: production
-      - key: PORT
-        value: 10000  # Render는 자동으로 PORT 환경 변수를 설정하지만, 기본값 설정
     healthCheckPath: /health
 
