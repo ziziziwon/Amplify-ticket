@@ -6,18 +6,33 @@
 
 import { EventItem } from "./fetchEvents";
 
-const MELON_API_URL = "http://localhost:4000";
+// 환경 변수에서 API URL 가져오기 (없으면 기본값 사용)
+// 개발: http://localhost:4000
+// 프로덕션: 백엔드 서버 URL (예: https://api.yourdomain.com 또는 카페24 서버 URL)
+const MELON_API_URL = process.env.REACT_APP_MELON_API_URL || "http://localhost:4000";
 
 /**
  * 멜론티켓 서버 상태 확인
  */
 export async function checkMelonServer(): Promise<boolean> {
   try {
-    const response = await fetch(`${MELON_API_URL}/health`);
+    // 타임아웃 설정 (3초)
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 3000);
+    
+    const response = await fetch(`${MELON_API_URL}/health`, {
+      signal: controller.signal,
+    });
+    
+    clearTimeout(timeoutId);
     const data = await response.json();
     return data.status === "ok";
-  } catch (error) {
-    console.error("❌ 멜론 서버 연결 실패:", error);
+  } catch (error: any) {
+    if (error.name === 'AbortError') {
+      console.warn("⏱️ 멜론 서버 연결 타임아웃 (3초)");
+    } else {
+      console.warn("❌ 멜론 서버 연결 실패:", error.message || error);
+    }
     return false;
   }
 }

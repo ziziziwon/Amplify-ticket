@@ -119,15 +119,25 @@ npm install
 
 ### 3. 환경 변수 설정
 
-`.env.example` 파일을 참고하여 `.env` 파일을 생성하세요.
+프로젝트 루트에 `.env` 파일을 생성하세요.
 
 ```bash
-cp .env.example .env
+# .env 파일 생성
+touch .env
+```
+
+`.env` 파일에 다음 내용을 추가하세요:
+
+```env
+# 멜론티켓 백엔드 API URL
+# 개발 환경: http://localhost:4000
+# 프로덕션 환경: 백엔드 서버 URL (예: https://api.yourdomain.com)
+REACT_APP_MELON_API_URL=http://localhost:4000
 ```
 
 필요한 환경 변수:
-- Firebase 설정 정보
-- API 키 (선택사항)
+- `REACT_APP_MELON_API_URL`: 멜론티켓 백엔드 서버 URL
+- Firebase 설정 정보 (코드에 직접 설정됨)
 
 ### 4. Firebase 설정
 
@@ -174,7 +184,19 @@ service cloud.firestore {
 }
 ```
 
-### 6. 개발 서버 실행
+### 6. 백엔드 서버 실행 (멜론티켓 API)
+
+별도 터미널에서 백엔드 서버를 실행하세요:
+
+```bash
+cd concert-server
+npm install
+npm start
+```
+
+백엔드 서버는 `http://localhost:4000`에서 실행됩니다.
+
+### 7. 개발 서버 실행
 
 ```bash
 npm start
@@ -189,6 +211,79 @@ npm run build
 ```
 
 빌드된 파일은 `build/` 디렉토리에 생성됩니다.
+
+## 🚀 배포 가이드
+
+### 프론트엔드 배포 (카페24 서버)
+
+1. **프로덕션 빌드 생성**
+   ```bash
+   npm run build
+   ```
+
+2. **환경 변수 설정**
+   프로덕션 환경에서는 `.env.production` 파일을 생성하거나, 빌드 전에 환경 변수를 설정하세요:
+   ```bash
+   # .env.production 파일 생성
+   REACT_APP_MELON_API_URL=https://your-backend-server.com
+   ```
+
+3. **빌드 파일 업로드**
+   - `build/` 폴더의 모든 파일을 카페24 서버의 `/amplify` 디렉토리에 업로드
+   - `.htaccess` 파일도 함께 업로드 (SPA 라우팅 지원)
+
+### 백엔드 서버 배포
+
+백엔드 서버(`concert-server`)는 별도로 배포해야 합니다. 카페24는 일반적으로 Node.js 서버를 지원하지 않으므로, 다음 옵션 중 하나를 선택하세요:
+
+#### 옵션 1: 클라우드 서비스 사용 (권장)
+
+**Railway, Render, Heroku 등:**
+```bash
+cd concert-server
+# Railway/Render/Heroku에 배포
+# 각 서비스의 가이드에 따라 배포
+```
+
+배포 후 받은 URL을 프론트엔드의 `.env.production`에 설정:
+```env
+REACT_APP_MELON_API_URL=https://your-backend.railway.app
+```
+
+#### 옵션 2: 별도 VPS 서버 사용
+
+VPS 서버(예: AWS EC2, DigitalOcean)에 백엔드 서버를 배포:
+```bash
+cd concert-server
+npm install
+# PM2로 프로세스 관리
+pm2 start index.js --name melon-api
+```
+
+#### 옵션 3: 카페24가 Node.js를 지원하는 경우
+
+카페24에서 Node.js를 지원한다면:
+1. `concert-server` 폴더를 카페24 서버에 업로드
+2. 서버에서 `npm install` 실행
+3. PM2 또는 forever로 프로세스 실행
+4. 프론트엔드 `.env.production`에 카페24 서버의 백엔드 URL 설정
+
+### 환경 변수 설정 요약
+
+**개발 환경 (`.env`):**
+```env
+REACT_APP_MELON_API_URL=http://localhost:4000
+```
+
+**프로덕션 환경 (`.env.production` 또는 빌드 시 설정):**
+```env
+REACT_APP_MELON_API_URL=https://your-backend-server.com
+```
+
+**빌드 시 환경 변수 설정:**
+```bash
+REACT_APP_MELON_API_URL=https://your-backend-server.com npm run build
+```
 
 ## 📊 데이터 구조
 

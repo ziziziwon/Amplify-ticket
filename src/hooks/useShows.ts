@@ -96,9 +96,68 @@ export function useShowsByCategory(category: string, sortType: ShowSortType = "l
         } else if (DATA_SOURCE === "melon") {
           // ⭐ 멜론티켓 크롤링 사용
           console.log(`🎭 멜론티켓 모드: ${category} 데이터 로드 (정렬: ${sortType})`);
-          const { fetchMelonConcerts } = await import("../api/melon");
-          const data = await fetchMelonConcerts(category, sortType);
-          setShows(data as unknown as Show[]);
+          try {
+            const { fetchMelonConcerts, checkMelonServer } = await import("../api/melon");
+            
+            // 서버 연결 확인
+            const isServerAvailable = await checkMelonServer();
+            if (!isServerAvailable) {
+              throw new Error("멜론 서버 연결 실패 - JSON 데이터로 fallback");
+            }
+            
+            const data = await fetchMelonConcerts(category, sortType);
+            
+            // 데이터가 비어있으면 JSON으로 fallback
+            if (!data || data.length === 0) {
+              console.warn("⚠️ 멜론 데이터가 비어있습니다. JSON 데이터로 fallback합니다.");
+              throw new Error("멜론 데이터 없음 - JSON 데이터로 fallback");
+            }
+            
+            setShows(data as unknown as Show[]);
+          } catch (melonError) {
+            console.warn("⚠️ 멜론 서버 연결 실패, JSON 데이터로 fallback:", melonError);
+            // JSON 데이터로 fallback
+            let filtered = showsData as unknown as Show[];
+            
+            if (category !== "all" && filtered.length > 0 && filtered[0].category) {
+              filtered = filtered.filter((show) => show.category === category);
+            }
+            
+            filtered = filtered.filter((show) => new Date(show.dates[0]) > new Date());
+            
+            switch (sortType) {
+              case "latest":
+                filtered.sort((a, b) => new Date(a.dates[0]).getTime() - new Date(b.dates[0]).getTime());
+                break;
+              case "popularity":
+                const statusPriority: Record<string, number> = { onsale: 1, presale: 2, upcoming: 3, soldout: 4 };
+                filtered.sort((a, b) => {
+                  const priorityA = statusPriority[a.ticketStatus] || 999;
+                  const priorityB = statusPriority[b.ticketStatus] || 999;
+                  return priorityA - priorityB;
+                });
+                break;
+              case "deadline":
+                filtered.sort((a, b) => new Date(a.dates[0]).getTime() - new Date(b.dates[0]).getTime());
+                break;
+              case "price_low":
+                filtered.sort((a, b) => {
+                  const minPriceA = Math.min(...Object.values(a.priceTable));
+                  const minPriceB = Math.min(...Object.values(b.priceTable));
+                  return minPriceA - minPriceB;
+                });
+                break;
+              case "price_high":
+                filtered.sort((a, b) => {
+                  const maxPriceA = Math.max(...Object.values(a.priceTable));
+                  const maxPriceB = Math.max(...Object.values(b.priceTable));
+                  return maxPriceB - maxPriceA;
+                });
+                break;
+            }
+            
+            setShows(filtered);
+          }
         } else if (DATA_SOURCE === "melon-direct") {
           // ⭐ 멜론티켓 직접 호출 (Puppeteer 불필요!)
           console.log("🎭 멜론티켓 Direct 모드: axios 직접 호출");

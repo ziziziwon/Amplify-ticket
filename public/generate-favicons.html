@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Favicon Generator</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      background: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    .icon-preview {
+      display: inline-block;
+      margin: 10px;
+      text-align: center;
+    }
+    canvas {
+      border: 1px solid #ddd;
+      margin: 5px;
+    }
+    button {
+      margin: 5px;
+      padding: 8px 16px;
+      background: #4C4F7A;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #7062A6;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>AMPLIFY Favicon Generator</h1>
+    <p>아래 버튼을 클릭하여 각 크기의 아이콘을 다운로드하세요.</p>
+    
+    <div id="previews"></div>
+    
+    <script>
+      const svgContent = `<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4C4F7A;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7062A6;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background Circle -->
+  <circle cx="32" cy="32" r="32" fill="url(#bgGradient)"/>
+  
+  <!-- Letter A from AMPLIFY logo (centered and optimized) -->
+  <g transform="translate(20, 18) scale(0.75)">
+    <path d="M9.79,0h6.82l9.79,23.76h-7.43l-1.51-4.12h-8.48l-1.53,4.12H0L9.79,0ZM11.32,13.59h3.8l-1.87-5.24h-.05l-1.87,5.24Z" fill="#FFFFFF" filter="url(#glow)"/>
+  </g>
+  
+  <!-- Accent accent (subtle) -->
+  <circle cx="32" cy="32" r="30" fill="none" stroke="#FF8C55" stroke-width="0.5" opacity="0.2"/>
+</svg>
+
+`;
+      
+      const sizes = [
+        { name: 'favicon.ico', size: 48 },
+        { name: 'logo192.png', size: 192 },
+        { name: 'logo512.png', size: 512 },
+        { name: 'apple-touch-icon.png', size: 180 }
+      ];
+      
+      const container = document.getElementById('previews');
+      
+      sizes.forEach(({ name, size }) => {
+        const div = document.createElement('div');
+        div.className = 'icon-preview';
+        
+        const canvas = document.createElement('canvas');
+        canvas.width = size;
+        canvas.height = size;
+        const ctx = canvas.getContext('2d');
+        
+        const img = new Image();
+        const svgBlob = new Blob([svgContent], { type: 'image/svg+xml' });
+        const url = URL.createObjectURL(svgBlob);
+        
+        img.onload = function() {
+          ctx.drawImage(img, 0, 0, size, size);
+          URL.revokeObjectURL(url);
+          
+          const button = document.createElement('button');
+          button.textContent = `${name} (${size}x${size}) 다운로드`;
+          button.onclick = () => {
+            canvas.toBlob((blob) => {
+              const a = document.createElement('a');
+              a.href = URL.createObjectURL(blob);
+              a.download = name;
+              a.click();
+              URL.revokeObjectURL(a.href);
+            }, 'image/png');
+          };
+          
+          div.appendChild(canvas);
+          div.appendChild(document.createElement('br'));
+          div.appendChild(button);
+          container.appendChild(div);
+        };
+        
+        img.src = url;
+      });
+    </script>
+  </div>
+</body>
+</html>
