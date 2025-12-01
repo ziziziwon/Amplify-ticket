@@ -131,12 +131,19 @@ touch .env
 ```env
 # 멜론티켓 백엔드 API URL
 # 개발 환경: http://localhost:4000
-# 프로덕션 환경: 백엔드 서버 URL (예: https://api.yourdomain.com)
+# 프로덕션 환경: Render 배포된 서버 URL
 REACT_APP_MELON_API_URL=http://localhost:4000
+```
+
+**프로덕션 환경 변수 (`.env.production`):**
+```env
+REACT_APP_MELON_API_URL=https://amplify-concert-server-bqur.onrender.com
 ```
 
 필요한 환경 변수:
 - `REACT_APP_MELON_API_URL`: 멜론티켓 백엔드 서버 URL
+  - 개발: `http://localhost:4000`
+  - 프로덕션: `https://amplify-concert-server-bqur.onrender.com`
 - Firebase 설정 정보 (코드에 직접 설정됨)
 
 ### 4. Firebase 설정
