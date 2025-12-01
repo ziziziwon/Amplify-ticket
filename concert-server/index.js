@@ -30,7 +30,7 @@ const CACHE_DURATION = 5 * 60 * 1000; // 5분
 
 // 서버 상태 확인 (Render health check용)
 app.get("/health", (req, res) => {
-  res.status(200).send("OK");
+  res.status(200).json({ status: "ok" });
 });
 
 // ⭐ 캐시 클리어
