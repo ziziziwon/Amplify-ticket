@@ -23,14 +23,15 @@ export async function checkMelonServer(retries: number = 3): Promise<boolean> {
   let attempt = 0;
   
   while (attempt < maxRetries) {
+    const currentAttempt = attempt; // loop 안에서 안전하게 사용하기 위해 복사
     try {
       // 첫 시도는 15초, 이후는 10초 타임아웃
-      const timeout = attempt === 0 ? 15000 : 10000;
+      const timeout = currentAttempt === 0 ? 15000 : 10000;
       const controller = new AbortController();
       const timeoutId = setTimeout(() => controller.abort(), timeout);
       
-      if (attempt > 0) {
-        console.log(`🔄 멜론 서버 재시도 중... (${attempt + 1}/${maxRetries})`);
+      if (currentAttempt > 0) {
+        console.log(`🔄 멜론 서버 재시도 중... (${currentAttempt + 1}/${maxRetries})`);
       }
       
       const response = await fetch(`${MELON_API_URL}/health`, {
@@ -41,8 +42,8 @@ export async function checkMelonServer(retries: number = 3): Promise<boolean> {
       const data = await response.json();
       
       if (data.status === "ok") {
-        if (attempt > 0) {
-          console.log(`✅ 멜론 서버 연결 성공 (${attempt + 1}번째 시도)`);
+        if (currentAttempt > 0) {
+          console.log(`✅ 멜론 서버 연결 성공 (${currentAttempt + 1}번째 시도)`);
         }
         return true;
       }
@@ -52,17 +53,17 @@ export async function checkMelonServer(retries: number = 3): Promise<boolean> {
       attempt++;
       
       if (error.name === 'AbortError') {
-        if (attempt < maxRetries) {
-          console.warn(`⏱️ 멜론 서버 연결 타임아웃 (${attempt}/${maxRetries}) - 재시도 중...`);
+        if (currentAttempt < maxRetries - 1) {
+          console.warn(`⏱️ 멜론 서버 연결 타임아웃 (${currentAttempt + 1}/${maxRetries}) - 재시도 중...`);
           // 재시도 전 대기 (점진적 백오프)
-          await new Promise(resolve => setTimeout(resolve, 2000 * attempt));
+          await new Promise(resolve => setTimeout(resolve, 2000 * (currentAttempt + 1)));
         } else {
           console.warn(`⏱️ 멜론 서버 연결 타임아웃 (${maxRetries}회 시도 실패)`);
         }
       } else {
-        if (attempt < maxRetries) {
-          console.warn(`❌ 멜론 서버 연결 실패 (${attempt}/${maxRetries}):`, error.message || error, "- 재시도 중...");
-          await new Promise(resolve => setTimeout(resolve, 2000 * attempt));
+        if (currentAttempt < maxRetries - 1) {
+          console.warn(`❌ 멜론 서버 연결 실패 (${currentAttempt + 1}/${maxRetries}):`, error.message || error, "- 재시도 중...");
+          await new Promise(resolve => setTimeout(resolve, 2000 * (currentAttempt + 1)));
         } else {
           console.warn(`❌ 멜론 서버 연결 실패 (${maxRetries}회 시도 실패):`, error.message || error);
         }
