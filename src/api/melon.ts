@@ -12,67 +12,126 @@ import { EventItem } from "./fetchEvents";
 const MELON_API_URL = process.env.REACT_APP_MELON_API_URL || "http://localhost:4000";
 
 /**
- * 멜론티켓 서버 상태 확인
+ * 멜론티켓 서버 상태 확인 (재시도 로직 포함)
+ * 
+ * Render 무료 플랜의 cold start 대응:
+ * - 첫 요청 시 최대 30초까지 대기
+ * - 최대 3회 재시도
  */
-export async function checkMelonServer(): Promise<boolean> {
-  try {
-    // 타임아웃 설정 (3초)
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 3000);
-    
-    const response = await fetch(`${MELON_API_URL}/health`, {
-      signal: controller.signal,
-    });
-    
-    clearTimeout(timeoutId);
-    const data = await response.json();
-    return data.status === "ok";
-  } catch (error: any) {
-    if (error.name === 'AbortError') {
-      console.warn("⏱️ 멜론 서버 연결 타임아웃 (3초)");
-    } else {
-      console.warn("❌ 멜론 서버 연결 실패:", error.message || error);
+export async function checkMelonServer(retries: number = 3): Promise<boolean> {
+  const maxRetries = retries;
+  let attempt = 0;
+  
+  while (attempt < maxRetries) {
+    try {
+      // 첫 시도는 15초, 이후는 10초 타임아웃
+      const timeout = attempt === 0 ? 15000 : 10000;
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), timeout);
+      
+      if (attempt > 0) {
+        console.log(`🔄 멜론 서버 재시도 중... (${attempt + 1}/${maxRetries})`);
+      }
+      
+      const response = await fetch(`${MELON_API_URL}/health`, {
+        signal: controller.signal,
+      });
+      
+      clearTimeout(timeoutId);
+      const data = await response.json();
+      
+      if (data.status === "ok") {
+        if (attempt > 0) {
+          console.log(`✅ 멜론 서버 연결 성공 (${attempt + 1}번째 시도)`);
+        }
+        return true;
+      }
+      
+      throw new Error("서버 응답이 올바르지 않습니다");
+    } catch (error: any) {
+      attempt++;
+      
+      if (error.name === 'AbortError') {
+        if (attempt < maxRetries) {
+          console.warn(`⏱️ 멜론 서버 연결 타임아웃 (${attempt}/${maxRetries}) - 재시도 중...`);
+          // 재시도 전 대기 (점진적 백오프)
+          await new Promise(resolve => setTimeout(resolve, 2000 * attempt));
+        } else {
+          console.warn(`⏱️ 멜론 서버 연결 타임아웃 (${maxRetries}회 시도 실패)`);
+        }
+      } else {
+        if (attempt < maxRetries) {
+          console.warn(`❌ 멜론 서버 연결 실패 (${attempt}/${maxRetries}):`, error.message || error, "- 재시도 중...");
+          await new Promise(resolve => setTimeout(resolve, 2000 * attempt));
+        } else {
+          console.warn(`❌ 멜론 서버 연결 실패 (${maxRetries}회 시도 실패):`, error.message || error);
+        }
+      }
     }
-    return false;
   }
+  
+  return false;
 }
 
 /**
- * 멜론티켓 콘서트 목록 가져오기
+ * 멜론티켓 콘서트 목록 가져오기 (재시도 로직 포함)
  * 
  * @param category - 카테고리 (concert, musical, classical, festival, sports)
  * @param sortType - 정렬 타입 (popularity=인기순, deadline=공연일자순, latest=최신순)
+ * @param retries - 재시도 횟수 (기본값: 2)
  * @returns EventItem 배열
  */
-export async function fetchMelonConcerts(category: string = "concert", sortType: string = "popularity"): Promise<EventItem[]> {
-  try {
-    // sortType 변환: popularity -> HIT, deadline -> DATE, latest -> RECENT
-    const melonSortMap: { [key: string]: string } = {
-      "popularity": "HIT",      // 인기순
-      "deadline": "DATE",       // 공연일자순
-      "latest": "RECENT",       // 최신순
-    };
-    const melonSort = melonSortMap[sortType] || "HIT";
+export async function fetchMelonConcerts(category: string = "concert", sortType: string = "popularity", retries: number = 2): Promise<EventItem[]> {
+  const maxRetries = retries;
+  let attempt = 0;
+  
+  // sortType 변환: popularity -> HIT, deadline -> DATE, latest -> RECENT
+  const melonSortMap: { [key: string]: string } = {
+    "popularity": "HIT",      // 인기순
+    "deadline": "DATE",       // 공연일자순
+    "latest": "RECENT",       // 최신순
+  };
+  const melonSort = melonSortMap[sortType] || "HIT";
+  
+  while (attempt <= maxRetries) {
+    try {
+      const currentAttempt = attempt; // loop 안에서 안전하게 사용하기 위해 복사
+      
+      if (currentAttempt === 0) {
+        console.log(`🎭 멜론티켓 데이터 요청 중 (${category}, ${sortType} -> ${melonSort})...`);
+      } else {
+        console.log(`🔄 멜론티켓 데이터 재요청 중... (${currentAttempt + 1}/${maxRetries + 1})`);
+      }
+      
+      // 타임아웃 설정 (첫 시도는 20초, 이후는 15초)
+      const timeout = currentAttempt === 0 ? 20000 : 15000;
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), timeout);
+      
+      const response = await fetch(`${MELON_API_URL}/concerts?category=${category}&sortType=${melonSort}`, {
+        signal: controller.signal,
+      });
+      
+      clearTimeout(timeoutId);
+      const data = await response.json();
     
-    console.log(`🎭 멜론티켓 데이터 요청 중 (${category}, ${sortType} -> ${melonSort})...`);
-    
-    const response = await fetch(`${MELON_API_URL}/concerts?category=${category}&sortType=${melonSort}`);
-    const data = await response.json();
-    
-    if (!data.success) {
-      throw new Error(data.error || "멜론 크롤링 실패");
-    }
-    
-    console.log(`✅ 멜론에서 ${data.count}개의 공연 로드`);
-    
-    // 데이터가 없으면 로그 출력
-    if (!data.concerts || data.concerts.length === 0) {
-      console.warn(`⚠️ ${category} 카테고리에 데이터 없음 (count: ${data.count})`);
-      console.log(`📄 응답 데이터:`, data);
-    }
-    
-    // 멜론 데이터를 EventItem 형식으로 변환
-    const events: EventItem[] = (data.concerts || []).map((concert: any, index: number) => {
+      if (!data.success) {
+        throw new Error(data.error || "멜론 크롤링 실패");
+      }
+      
+      if (currentAttempt > 0) {
+        console.log(`✅ 멜론 서버 연결 성공 (${currentAttempt + 1}번째 시도)`);
+      }
+      console.log(`✅ 멜론에서 ${data.count}개의 공연 로드`);
+      
+      // 데이터가 없으면 로그 출력
+      if (!data.concerts || data.concerts.length === 0) {
+        console.warn(`⚠️ ${category} 카테고리에 데이터 없음 (count: ${data.count})`);
+        console.log(`📄 응답 데이터:`, data);
+      }
+      
+      // 멜론 데이터를 EventItem 형식으로 변환
+      const events: EventItem[] = (data.concerts || []).map((concert: any, index: number) => {
       // 서버에서 반환하는 필드명에 맞게 매핑
       const title = concert.title || concert.prodName || "제목 없음";
       const place = concert.place || concert.placeName || concert.venue || "공연장";
@@ -119,13 +178,38 @@ export async function fetchMelonConcerts(category: string = "concert", sortType:
         venueName: place,
         link: concert.link || `https://ticket.melon.com/performance/detail.htm?prodId=${concert.prodId}`,
       };
-    });
-    
-    return events;
-  } catch (error) {
-    console.error("❌ 멜론 데이터 로드 실패:", error);
-    return [];
+      });
+      
+      return events;
+    } catch (error: any) {
+      const currentAttempt = attempt; // loop 안에서 안전하게 사용하기 위해 복사
+      attempt++;
+      
+      if (error.name === 'AbortError') {
+        if (currentAttempt < maxRetries) {
+          console.warn(`⏱️ 멜론 데이터 요청 타임아웃 (${currentAttempt + 1}/${maxRetries + 1}) - 재시도 중...`);
+          // 재시도 전 대기 (점진적 백오프)
+          await new Promise(resolve => setTimeout(resolve, 2000 * (currentAttempt + 1)));
+          continue;
+        } else {
+          console.error(`❌ 멜론 데이터 로드 실패 (타임아웃): ${maxRetries + 1}회 시도 실패`);
+        }
+      } else {
+        if (currentAttempt < maxRetries) {
+          console.warn(`❌ 멜론 데이터 로드 실패 (${currentAttempt + 1}/${maxRetries + 1}):`, error.message || error, "- 재시도 중...");
+          await new Promise(resolve => setTimeout(resolve, 2000 * (currentAttempt + 1)));
+          continue;
+        } else {
+          console.error(`❌ 멜론 데이터 로드 실패: ${maxRetries + 1}회 시도 실패`, error);
+        }
+      }
+      
+      // 모든 재시도 실패 시 빈 배열 반환
+      return [];
+    }
   }
+  
+  return [];
 }
 
 /**

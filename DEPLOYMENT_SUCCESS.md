@@ -86,3 +86,5 @@ REACT_APP_MELON_API_URL=https://amplify-concert-server-bqur.onrender.com npm run
 
 이제 프론트엔드를 빌드하고 카페24 서버에 업로드하면 됩니다!
 
+
+

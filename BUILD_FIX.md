@@ -76,3 +76,5 @@ npm install --production
 - 프로덕션 환경에서는 axios로 직접 API 호출하므로 puppeteer 불필요
 - 로컬 개발 시에는 `npm install` (devDependencies 포함) 사용 가능
 
+
+

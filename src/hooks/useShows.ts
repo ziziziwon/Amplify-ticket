@@ -99,13 +99,15 @@ export function useShowsByCategory(category: string, sortType: ShowSortType = "l
           try {
             const { fetchMelonConcerts, checkMelonServer } = await import("../api/melon");
             
-            // 서버 연결 확인
-            const isServerAvailable = await checkMelonServer();
+            // 서버 연결 확인 (재시도 로직 포함)
+            console.log("🔍 멜론 서버 연결 확인 중... (최대 15초 대기)");
+            const isServerAvailable = await checkMelonServer(3);
             if (!isServerAvailable) {
               throw new Error("멜론 서버 연결 실패 - JSON 데이터로 fallback");
             }
             
-            const data = await fetchMelonConcerts(category, sortType);
+            // 데이터 가져오기 (재시도 로직 포함)
+            const data = await fetchMelonConcerts(category, sortType, 2);
             
             // 데이터가 비어있으면 JSON으로 fallback
             if (!data || data.length === 0) {
