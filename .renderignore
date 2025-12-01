@@ -1,0 +1,16 @@
+# 프론트엔드 파일 제외 (백엔드만 배포)
+src/
+public/
+build/
+package.json
+package-lock.json
+tsconfig.json
+*.md
+!concert-server/README.md
+.gitignore
+firestore.rules
+LICENSE
+BRAND_IDENTITY.md
+scripts/
+public/
+
