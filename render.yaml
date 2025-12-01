@@ -5,7 +5,7 @@ services:
     region: frankfurt
     plan: free
     rootDir: concert-server
-    buildCommand: npm install
+    buildCommand: npm install --production
     startCommand: node index.js
     envVars:
       - key: NODE_ENV
