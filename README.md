@@ -263,8 +263,10 @@ npm run build
    - 설정:
      - **Name**: `amplify-concert-server`
      - **Environment**: `Node`
-     - **Build Command**: `cd concert-server && npm install`
-     - **Start Command**: `cd concert-server && npm start`
+     - **Region**: `Frankfurt`
+     - **Root Directory**: `concert-server`
+     - **Build Command**: `npm install --production`
+     - **Start Command**: `node index.js`
      - **Plan**: `Free` (또는 `Starter`)
 
 5. **환경 변수 설정 (선택사항)**
@@ -273,19 +275,25 @@ npm run build
    - `PORT`는 Render가 자동으로 설정
 
 6. **배포 완료 후 URL 확인**
-   - Render 대시보드에서 서비스 URL 확인 (예: `https://amplify-concert-server.onrender.com`)
-   - Health check: `https://amplify-concert-server.onrender.com/health`
+   - Render 대시보드에서 서비스 URL 확인 (예: `https://amplify-concert-server-bqur.onrender.com`)
+   - Health check: `https://amplify-concert-server-bqur.onrender.com/health`
+   - 응답: `{"status":"ok"}` (JSON 형식)
 
 7. **프론트엔드 환경 변수 설정**
    ```bash
    # .env.production 파일 생성
-   REACT_APP_MELON_API_URL=https://amplify-concert-server.onrender.com
+   REACT_APP_MELON_API_URL=https://amplify-concert-server-bqur.onrender.com
    ```
    
    또는 빌드 시 직접 설정:
    ```bash
-   REACT_APP_MELON_API_URL=https://amplify-concert-server.onrender.com npm run build
+   REACT_APP_MELON_API_URL=https://amplify-concert-server-bqur.onrender.com npm run build
    ```
+
+**✅ 현재 배포된 서버:**
+- 백엔드 URL: `https://amplify-concert-server-bqur.onrender.com`
+- Health Check: `https://amplify-concert-server-bqur.onrender.com/health`
+- 프론트엔드: 카페24 서버 (`/amplify` 경로)
 
 **⚠️ Render 무료 플랜 제한사항:**
 - 15분간 요청이 없으면 서버가 sleep 상태로 전환됨
